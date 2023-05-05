@@ -16,26 +16,26 @@
   <meta name="author" content="晏萩">
   <meta name="keywords" content="">
   
-    <meta name="description" content="题目：给定一个长度为 N 的数列，A1,A2,⋯AN，如果其中一段连续的子序列Ai,Ai+1,⋯Aj ( i≤j ) 之和是 K 的倍数，我们就称这个区间 [i,j] 是 K 倍区间。 你能求出数列中总共有多少个 K 倍区间吗？ 输入描述第一行包含两个整数 N 和 K( 1≤N,K≤100000)。 以下 N 行每行包含一个整数Ai ( 1≤Ai≤100000) 输出描述输出一个整数，代表 K 倍">
+    <meta name="description" content="题目：数学老师给小明出了一道等差数列求和的题目。但是粗心的小明忘记了一 部分的数列，只记得其中 N 个整数。 现在给出这 N 个整数，小明想知道包含这 N 个整数的最短的等差数列有几项？ 输入描述输入的第一行包含一个整数 N。 第二行包含 N 个整数A1,A2,⋅⋅⋅,AN。(注意A1 ∼ AN 并不一定是按等差数列中的顺序给出) 其中，2≤N≤10^5，0≤Ai≤10^9。 输出描述输出一个整数">
 <meta property="og:type" content="article">
-<meta property="og:title" content="k倍区间（JAVA）">
-<meta property="og:url" content="http://example.com/2023/05/05/k%E5%80%8D%E5%8C%BA%E9%97%B4%EF%BC%88JAVA%EF%BC%89/index.html">
+<meta property="og:title" content="等差数列（JAVA）">
+<meta property="og:url" content="http://example.com/2023/05/05/%E7%AD%89%E5%B7%AE%E6%95%B0%E5%88%97%EF%BC%88JAVA%EF%BC%89/index.html">
 <meta property="og:site_name" content="晏萩の博客">
-<meta property="og:description" content="题目：给定一个长度为 N 的数列，A1,A2,⋯AN，如果其中一段连续的子序列Ai,Ai+1,⋯Aj ( i≤j ) 之和是 K 的倍数，我们就称这个区间 [i,j] 是 K 倍区间。 你能求出数列中总共有多少个 K 倍区间吗？ 输入描述第一行包含两个整数 N 和 K( 1≤N,K≤100000)。 以下 N 行每行包含一个整数Ai ( 1≤Ai≤100000) 输出描述输出一个整数，代表 K 倍">
+<meta property="og:description" content="题目：数学老师给小明出了一道等差数列求和的题目。但是粗心的小明忘记了一 部分的数列，只记得其中 N 个整数。 现在给出这 N 个整数，小明想知道包含这 N 个整数的最短的等差数列有几项？ 输入描述输入的第一行包含一个整数 N。 第二行包含 N 个整数A1,A2,⋅⋅⋅,AN。(注意A1 ∼ AN 并不一定是按等差数列中的顺序给出) 其中，2≤N≤10^5，0≤Ai≤10^9。 输出描述输出一个整数">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/img/dm05.jpg">
-<meta property="article:published_time" content="2023-05-05T10:27:32.000Z">
-<meta property="article:modified_time" content="2023-05-05T10:31:20.362Z">
+<meta property="og:image" content="http://example.com/img/dm07.jpg">
+<meta property="article:published_time" content="2023-05-05T10:47:17.000Z">
+<meta property="article:modified_time" content="2023-05-05T10:50:13.561Z">
 <meta property="article:author" content="晏萩">
 <meta property="article:tag" content="JAVA">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="蓝桥杯">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/img/dm05.jpg">
+<meta name="twitter:image" content="http://example.com/img/dm07.jpg">
   
   
   
-  <title>k倍区间（JAVA） - 晏萩の博客</title>
+  <title>等差数列（JAVA） - 晏萩の博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -231,7 +231,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="k倍区间（JAVA）"></span>
+            <span id="subtitle" data-typed-text="等差数列（JAVA）"></span>
           
         </div>
 
@@ -242,7 +242,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-05-05 18:27" pubdate>
+        <time datetime="2023-05-05 18:47" pubdate>
           2023年5月5日 晚上
         </time>
       </span>
@@ -254,7 +254,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.4k 字
+          1.8k 字
         
       </span>
     
@@ -265,7 +265,7 @@
         
         
         
-          12 分钟
+          15 分钟
         
       </span>
     
@@ -307,34 +307,38 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">k倍区间（JAVA）</h1>
+            <h1 style="display: none">等差数列（JAVA）</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p>给定一个长度为 N 的数列，A1,A2,⋯AN，如果其中一段连续的子序列Ai,Ai+1,⋯Aj ( i≤j ) 之和是 K 的倍数，我们就称这个区间 [i,j] 是 K 倍区间。</p>
-<p>你能求出数列中总共有多少个 K 倍区间吗？</p>
-<p><strong>输入描述</strong><br>第一行包含两个整数 N 和 K( 1≤N,K≤100000)。</p>
-<p>以下 N 行每行包含一个整数Ai ( 1≤Ai≤100000)</p>
-<p><strong>输出描述</strong><br>输出一个整数，代表 K 倍区间的数目。</p>
+                <h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p>数学老师给小明出了一道等差数列求和的题目。但是粗心的小明忘记了一 部分的数列，只记得其中 N 个整数。</p>
+<p>现在给出这 N 个整数，小明想知道包含这 N 个整数的最短的等差数列有几项？</p>
+<p><strong>输入描述</strong><br>输入的第一行包含一个整数 N。</p>
+<p>第二行包含 N 个整数A1,A2,⋅⋅⋅,AN。(注意A1 ∼ AN 并不一定是按等差数列中的顺序给出)</p>
+<p>其中，2≤N≤10^5，0≤Ai≤10^9。</p>
+<p><strong>输出描述</strong><br>输出一个整数表示答案。</p>
 <p><strong>输入输出样例</strong><br>示例</p>
 <p><strong>输入</strong></p>
 <blockquote>
-<p>5 2<br>1<br>2<br>3<br>4<br>5</p>
+<p>5<br>2 6 4 10 20</p>
 </blockquote>
 <p><strong>输出</strong></p>
 <blockquote>
-<p>6</p>
+<p>10</p>
 </blockquote>
-<p><strong>运行限制</strong><br>最大运行时间：2s<br>最大运行内存: 256M</p>
-<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.Scanner;<br> <br> <br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span>  <span class="hljs-title class_">Main</span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">Scanner</span> <span class="hljs-variable">sc</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br>        <span class="hljs-type">int</span> <span class="hljs-variable">N</span> <span class="hljs-operator">=</span> sc.nextInt();<br>        <span class="hljs-type">int</span> <span class="hljs-variable">K</span> <span class="hljs-operator">=</span> sc.nextInt();<br>        <span class="hljs-type">int</span>[] A = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[N];           <span class="hljs-comment">//储存数列</span><br>        <span class="hljs-type">long</span>[] B = <span class="hljs-keyword">new</span> <span class="hljs-title class_">long</span>[<span class="hljs-number">100000</span>];    <span class="hljs-comment">//储存同余的前缀和的个数</span><br>        <span class="hljs-type">long</span> sum=<span class="hljs-number">0</span>;                     <span class="hljs-comment">//计算前缀和</span><br>        <span class="hljs-type">long</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;                <span class="hljs-comment">//储存结果</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; N; i++) &#123;<br>            A[i]= sc.nextInt();<br>            sum+=A[i];<br>            B[(<span class="hljs-type">int</span>)(sum % K)]++;        <span class="hljs-comment">//前缀和取余并记数</span><br>        &#125;<br>        result=result+B[<span class="hljs-number">0</span>];             <span class="hljs-comment">//余数为零的区间一定是k倍区间</span><br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;K;i++)&#123;<br>            result+=(B[i]*(B[i]-<span class="hljs-number">1</span>))/<span class="hljs-number">2</span>;  <span class="hljs-comment">//相同余数的前缀数相减得到的区间一定是K倍区间，再利用排列组合计算个数。</span><br>        &#125;<br>        System.out.println(result);<br>        sc.close();            <br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>样例说明： 包含 2、6、4、10、20 的最短的等差数列是 2、4、6、8、10、12、14、16、 18、20。</p>
+</blockquote>
+<p><strong>运行限制</strong><br>最大运行时间：1s<br>最大运行内存: 256M</p>
+<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.Arrays;<br><span class="hljs-keyword">import</span> java.util.Scanner;<br> <br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        Scanner sc=<span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br>        <span class="hljs-type">int</span> n;                           <span class="hljs-comment">//n个整数</span><br>        n=sc.nextInt();<br>        <span class="hljs-type">int</span>[] A=<span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[n];             <span class="hljs-comment">//存储n个整数</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++)&#123;<br>            A[i]=sc.nextInt();<br>        &#125;<br>        Arrays.sort(A);                  <span class="hljs-comment">//用sort方法进行升序排列</span><br>        <span class="hljs-type">int</span> min=Integer.MAX_VALUE;       <span class="hljs-comment">//min取最大值</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;n-<span class="hljs-number">1</span>;i++)&#123;<br>            min=Integer.min(min,A[i+<span class="hljs-number">1</span>]-A[i]); <span class="hljs-comment">//找出最小差值当作暂时的公差</span><br>        &#125;<br>        <span class="hljs-keyword">if</span>(min==<span class="hljs-number">0</span>)&#123;<br>            System.out.println(n);         <span class="hljs-comment">//特殊情况1：n个整数全部相同</span><br>        &#125;<span class="hljs-keyword">else</span>&#123;<br>            <span class="hljs-type">int</span> a=<span class="hljs-number">0</span>,c=<span class="hljs-number">0</span>;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i=n-<span class="hljs-number">1</span>;i&gt;=<span class="hljs-number">0</span>;i--) &#123;      <br>                <span class="hljs-keyword">if</span> ((A[i] - A[<span class="hljs-number">0</span>]) % min != <span class="hljs-number">0</span>) &#123; <span class="hljs-comment">//用等差数列的定义判断min是否为真正的公差</span><br>                    <span class="hljs-type">int</span>[] b=<span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[min];<br>                     c=min;<br>                    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> x=<span class="hljs-number">2</span>;x&lt;=min/<span class="hljs-number">2</span>;x++)&#123;<br>                        <span class="hljs-keyword">if</span> (min%x==<span class="hljs-number">0</span>)&#123;<br>                            b[x]=x;<br>                        &#125;<br>                    &#125;<br>                    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> y=<span class="hljs-number">0</span>;y&lt;min;y++) &#123;<br>                        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> n - <span class="hljs-number">1</span>; j &gt;= <span class="hljs-number">0</span>; j--) &#123;<br>                            <span class="hljs-keyword">if</span> (b[y]!=<span class="hljs-number">0</span>&amp;&amp;(A[j] - A[<span class="hljs-number">0</span>]) % b[y] == <span class="hljs-number">0</span>)&#123;<br>                                c=b[y];<br> <br>                            &#125;<br> <br>                        &#125;<br>                        <span class="hljs-keyword">if</span> (c==min)&#123;<br>                            a=A[n - <span class="hljs-number">1</span>] - A[<span class="hljs-number">0</span>]+<span class="hljs-number">1</span>;<br>                        &#125;<br>                        <span class="hljs-keyword">else</span>&#123;<br>                            a = (A[n - <span class="hljs-number">1</span>] - A[<span class="hljs-number">0</span>]) / c + <span class="hljs-number">1</span>; <span class="hljs-comment">//到这里以上因为min不是真正的公差所以用来判断是否为第二种特殊情况并赋值</span><br>                        &#125;<br>                    &#125;<br>                   <span class="hljs-keyword">break</span>;<br>                &#125;                 <br>            &#125;                          <br>            <span class="hljs-keyword">if</span> (a==<span class="hljs-number">0</span>) &#123; <br>                a = (A[n - <span class="hljs-number">1</span>] - A[<span class="hljs-number">0</span>]) / min + <span class="hljs-number">1</span>;   <span class="hljs-comment">//min为公差计算赋值</span><br>            &#125;<br>            System.out.println(a);<br>        &#125;<br>    &#125;<br> <br> <br> <br> <br>&#125;<br></code></pre></td></tr></table></figure>
 
-<h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><p>（1）前缀数（从序列第一个数到它自身的所有数之和）：比如例题中的序列1 2 3 4 5的前缀数分别是1 3 6 10 15。</p>
-<p>（2）前缀数相减得到的区间：两个前缀数相减会得到一个区间比如5的前缀数15减去2的前缀数3可得到一个区间3 4 5。</p>
-<p>（3）储存同余的前缀数：将所有前缀数对K取余将每个余数及其个数进行存储如B[1]&#x3D;3表示余数为1的前缀数有3个。</p>
-<p>（4）两个同余的前缀数相减得到的区间一定是K倍区间：这算是一种数学规律如例题中15%2&#x3D;1，3%2&#x3D;1，（15-3）%2&#x3D;0也就是3 4 5是一个K倍区间。</p>
-<p>（5）如果前缀数对K取余为0则说明这一区间必为K倍区间：如10%2&#x3D;0，则1 2 3 4必为一个K倍区间，</p>
-<p>result&#x3D;result+B[0];直接加上即可。<br>（6）根据（4）可知任何两个同余的前缀数都可以获得一个前缀区间，则进行排列组合根据同余前缀数个数求出结果即可，还以例题为例B[1]&#x3D;3说明有三个余数是一的前缀数，我们要从中挑选两个组成一组求一个区间，共有C32（高中的排列组合3在下2在上）种组合方式为3*（3-1）&#x2F;2&#x3D;3，同理，余数为0的前缀（（5）计算的是从第一个数开始到它本身这个区间是k倍区间的个数所以并不冲突）数有1种组合方式加到一起总共有2+1&#x3D;3种再加上（5）中的2种共有6种。</p>
+<h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><p>因为无序所以先对其进行排序，用java自带的sort方法进行升序排序，然后找最小差值为暂时公差，如果最小差值是0，则为特殊情况1（n个整数都一样）直接输出n。</p>
+<p>再利用等差数列定义判断min是否为公差：任意一个数Ai-最小的那个数A0）%（问题二求得的最小公差d）&#x3D;0则为公差，</p>
+<p>这里会出现第二种特殊情况：如果两个不同的公差有公约数就会算错，比如输入数列5 15 30，输出的结果是26而不是6。</p>
+<p>所以我们将min的全部约数求出来再进行一次判断如果有约数可以满足公差的要求，则最大满足要求的约数为新的公差进行计算。</p>
+<p>a &#x3D; (A[n - 1] - A[0]) &#x2F; c + 1;<br>如果没有满足要求的约数则公差为1，</p>
+<p>a&#x3D;A[n - 1] - A[0]+1;<br>如果min满足等差数列的定义，则min为真正的公差。<br>a &#x3D; (A[n - 1] - A[0]) &#x2F; min + 1;</p>
 
                 
               </div>
@@ -384,8 +388,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>k倍区间（JAVA）</div>
-      <div>http://example.com/2023/05/05/k倍区间（JAVA）/</div>
+      <div>等差数列（JAVA）</div>
+      <div>http://example.com/2023/05/05/等差数列（JAVA）/</div>
     </div>
     <div class="license-meta">
       
@@ -429,18 +433,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/05/05/%E8%B4%A8%E6%95%B0%E6%8B%86%E5%88%86%EF%BC%88JAVA%EF%BC%89/" title="质数拆分（JAVA）">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">质数拆分（JAVA）</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/05/05/%E5%9B%9E%E6%96%87%E6%97%A5%E6%9C%9F%EF%BC%88JAVA%EF%BC%89/" title="回文日期（JAVA）">
-                        <span class="hidden-mobile">回文日期（JAVA）</span>
+                      <a href="/2023/05/05/%E8%B4%A8%E6%95%B0%E6%8B%86%E5%88%86%EF%BC%88JAVA%EF%BC%89/" title="质数拆分（JAVA）">
+                        <span class="hidden-mobile">质数拆分（JAVA）</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
