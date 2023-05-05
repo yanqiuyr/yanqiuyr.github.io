@@ -16,26 +16,26 @@
   <meta name="author" content="晏萩">
   <meta name="keywords" content="">
   
-    <meta name="description" content="题目：在日常生活中，通过年、月、日这三个要素可以表示出一个唯一确定的日期。 牛牛习惯用 8 位数字表示一个日期，其中，前 4 位代表年份，接下来 2 位代表月份，最后 2 位代表日期。显然：一个日期只有一种表示方法，而两个不同的日期的表示方法不会相同。 牛牛认为，一个日期是回文的，当且仅当表示这个日期的 8 位数字是回文的。现在，牛牛想知道：在他指定的两个日期之间包含这两个日期本身），有多少个真实">
+    <meta name="description" content="题目：给定一个长度为 N 的数列，A1,A2,⋯AN，如果其中一段连续的子序列Ai,Ai+1,⋯Aj ( i≤j ) 之和是 K 的倍数，我们就称这个区间 [i,j] 是 K 倍区间。 你能求出数列中总共有多少个 K 倍区间吗？ 输入描述第一行包含两个整数 N 和 K( 1≤N,K≤100000)。 以下 N 行每行包含一个整数Ai ( 1≤Ai≤100000) 输出描述输出一个整数，代表 K 倍">
 <meta property="og:type" content="article">
-<meta property="og:title" content="回文日期（JAVA）">
-<meta property="og:url" content="http://example.com/2023/05/05/%E5%9B%9E%E6%96%87%E6%97%A5%E6%9C%9F%EF%BC%88JAVA%EF%BC%89/index.html">
+<meta property="og:title" content="k倍区间（JAVA）">
+<meta property="og:url" content="http://example.com/2023/05/05/k%E5%80%8D%E5%8C%BA%E9%97%B4%EF%BC%88JAVA%EF%BC%89/index.html">
 <meta property="og:site_name" content="晏萩の博客">
-<meta property="og:description" content="题目：在日常生活中，通过年、月、日这三个要素可以表示出一个唯一确定的日期。 牛牛习惯用 8 位数字表示一个日期，其中，前 4 位代表年份，接下来 2 位代表月份，最后 2 位代表日期。显然：一个日期只有一种表示方法，而两个不同的日期的表示方法不会相同。 牛牛认为，一个日期是回文的，当且仅当表示这个日期的 8 位数字是回文的。现在，牛牛想知道：在他指定的两个日期之间包含这两个日期本身），有多少个真实">
+<meta property="og:description" content="题目：给定一个长度为 N 的数列，A1,A2,⋯AN，如果其中一段连续的子序列Ai,Ai+1,⋯Aj ( i≤j ) 之和是 K 的倍数，我们就称这个区间 [i,j] 是 K 倍区间。 你能求出数列中总共有多少个 K 倍区间吗？ 输入描述第一行包含两个整数 N 和 K( 1≤N,K≤100000)。 以下 N 行每行包含一个整数Ai ( 1≤Ai≤100000) 输出描述输出一个整数，代表 K 倍">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/img/dm04.jpg">
-<meta property="article:published_time" content="2023-05-05T10:20:40.000Z">
-<meta property="article:modified_time" content="2023-05-05T10:25:35.959Z">
+<meta property="og:image" content="http://example.com/img/dm05.jpg">
+<meta property="article:published_time" content="2023-05-05T10:27:32.000Z">
+<meta property="article:modified_time" content="2023-05-05T10:31:20.362Z">
 <meta property="article:author" content="晏萩">
 <meta property="article:tag" content="JAVA">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="蓝桥杯">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/img/dm04.jpg">
+<meta name="twitter:image" content="http://example.com/img/dm05.jpg">
   
   
   
-  <title>回文日期（JAVA） - 晏萩の博客</title>
+  <title>k倍区间（JAVA） - 晏萩の博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -231,7 +231,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="回文日期（JAVA）"></span>
+            <span id="subtitle" data-typed-text="k倍区间（JAVA）"></span>
           
         </div>
 
@@ -242,7 +242,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-05-05 18:20" pubdate>
+        <time datetime="2023-05-05 18:27" pubdate>
           2023年5月5日 晚上
         </time>
       </span>
@@ -254,7 +254,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.7k 字
+          1.4k 字
         
       </span>
     
@@ -265,7 +265,7 @@
         
         
         
-          15 分钟
+          12 分钟
         
       </span>
     
@@ -307,59 +307,34 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">回文日期（JAVA）</h1>
+            <h1 style="display: none">k倍区间（JAVA）</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p>在日常生活中，通过年、月、日这三个要素可以表示出一个唯一确定的日期。</p>
-<p>牛牛习惯用 8 位数字表示一个日期，其中，前 4 位代表年份，接下来 2 位代表月份，最后 2 位代表日期。显然：一个日期只有一种表示方法，而两个不同的日期的表示方法不会相同。</p>
-<p>牛牛认为，一个日期是回文的，当且仅当表示这个日期的 8 位数字是回文的。现在，牛牛想知道：在他指定的两个日期之间包含这两个日期本身），有多少个真实存在的日期是回文的。</p>
-<p>提示：</p>
-<p>一个 8 位数字是回文的，当且仅当对于所有的i (1≤i≤8) 从左向右数的第 i 个数字和第 9 - i个数字（即从右向左数的第 i 个数字）是相同的。</p>
-<p>例如：</p>
-<p>对于 2016 年 11 月 19 日，用 8 位数字 20161119 表示，它不是回文的。</p>
-<p>对于 2010 年 1 月 2 日，用 8 位数字 20100102 表示，它是回文的。</p>
-<p>对于 2010 年 10 月 2 日，用 8 位数字 20101002 表示，它不是回文的。</p>
-<p>每一年中都有 12 个月份：</p>
-<p>其中，1,3,5,7,8,10,12 月每个月有 31 天；4,6,9,11 月每个月有 30 天；而对于 2 月，闰年时有 29 天，平年时有 28 天。</p>
-<p>一个年份是闰年当且仅当它满足下列两种情况其中的一种：</p>
-<p>这个年份是 4 的整数倍，但不是 100 的整数倍；</p>
-<p>这个年份是 400 的整数倍。</p>
-<p>例如：</p>
-<p>以下几个年份都是闰年：2000,2012,2016。</p>
-<p>以下几个年份是平年：1900,2011,2014。</p>
-<p><strong>输入描述</strong><br>输入两行，每行包括一个 8 位数字。</p>
-<p>第一行表示牛牛指定的起始日期。</p>
-<p>第二行表示牛牛指定的终止日期。</p>
-<p>保证 datei 和都是真实存在的日期，且年份部分一定为 4 位数字，且首位数字不为 0。</p>
-<p>保证 date1 一定不晚于 date2。</p>
-<p><strong>输出描述</strong><br>输出一个整数，表示在date1 和 date2 之间，有多少个日期是回文的。</p>
-<p><strong>输入输出样例</strong><br>示例 1</p>
+                <h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p>给定一个长度为 N 的数列，A1,A2,⋯AN，如果其中一段连续的子序列Ai,Ai+1,⋯Aj ( i≤j ) 之和是 K 的倍数，我们就称这个区间 [i,j] 是 K 倍区间。</p>
+<p>你能求出数列中总共有多少个 K 倍区间吗？</p>
+<p><strong>输入描述</strong><br>第一行包含两个整数 N 和 K( 1≤N,K≤100000)。</p>
+<p>以下 N 行每行包含一个整数Ai ( 1≤Ai≤100000)</p>
+<p><strong>输出描述</strong><br>输出一个整数，代表 K 倍区间的数目。</p>
+<p><strong>输入输出样例</strong><br>示例</p>
 <p><strong>输入</strong></p>
 <blockquote>
-<p>20110101<br>20111231</p>
+<p>5 2<br>1<br>2<br>3<br>4<br>5</p>
 </blockquote>
 <p><strong>输出</strong></p>
 <blockquote>
-<p>1</p>
+<p>6</p>
 </blockquote>
-<p>示例 2</p>
-<p><strong>输入</strong></p>
-<blockquote>
-<p>20000101<br>20101231</p>
-</blockquote>
-<p><strong>输出</strong></p>
-<blockquote>
-<p>2</p>
-</blockquote>
-<p><strong>运行限制</strong><br>最大运行时间：1s<br>最大运行内存: 256M</p>
-<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.Scanner;<br> <br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        Scanner scan=<span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br>   <span class="hljs-type">int</span> date1,date2,result=<span class="hljs-number">0</span>;               <span class="hljs-comment">//date1为第一个数据，date2为第二个数据，result用来记录结果。</span><br>        <span class="hljs-type">int</span> [] yue=&#123;<span class="hljs-number">0</span>,<span class="hljs-number">31</span>,<span class="hljs-number">29</span>,<span class="hljs-number">31</span>,<span class="hljs-number">30</span>,<span class="hljs-number">31</span>,<span class="hljs-number">30</span>,<span class="hljs-number">31</span>,<span class="hljs-number">31</span>,<span class="hljs-number">30</span>,<span class="hljs-number">31</span>,<span class="hljs-number">30</span>,<span class="hljs-number">31</span>&#125;;  <span class="hljs-comment">//将各个月份天数记录下来，二月记为29天从yue[1]为第一个月。</span><br>       date1=scan.nextInt();<br>       date2=scan.nextInt();<br>   <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=<span class="hljs-number">12</span>;i++)&#123;<br>       <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j=<span class="hljs-number">1</span>;j&lt;=yue[i];j++)&#123;<br>           <span class="hljs-type">int</span> mm=i,dd=j,yyyy=dd%<span class="hljs-number">10</span>*<span class="hljs-number">1000</span>+dd/<span class="hljs-number">10</span>*<span class="hljs-number">100</span>+mm%<span class="hljs-number">10</span>*<span class="hljs-number">10</span>+mm/<span class="hljs-number">10</span>;  <span class="hljs-comment">//遍历月份和天数，通过计算得出回文日期对应的年份</span><br>           <span class="hljs-keyword">if</span> (yyyy&lt;<span class="hljs-number">1000</span>)&#123;<br>               <span class="hljs-keyword">continue</span>;                            <span class="hljs-comment">//如果年份不是四位数则跳过此次循环</span><br>           &#125;<br>           <span class="hljs-type">int</span> date3=yyyy*<span class="hljs-number">10000</span>+mm*<span class="hljs-number">100</span>+dd;          <span class="hljs-comment">//将得到的日期转换为八位数，与输入的两个数据作比较</span><br>           <span class="hljs-keyword">if</span> (date3&gt;=date1&amp;&amp;date3&lt;=date2)&#123;<br>               result++;                             <span class="hljs-comment">//得到结果</span><br>           &#125;<br>       &#125;<br>   &#125;<br>        System.out.println(result);<br> <br>        scan.close();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><strong>运行限制</strong><br>最大运行时间：2s<br>最大运行内存: 256M</p>
+<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.Scanner;<br> <br> <br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span>  <span class="hljs-title class_">Main</span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">Scanner</span> <span class="hljs-variable">sc</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br>        <span class="hljs-type">int</span> <span class="hljs-variable">N</span> <span class="hljs-operator">=</span> sc.nextInt();<br>        <span class="hljs-type">int</span> <span class="hljs-variable">K</span> <span class="hljs-operator">=</span> sc.nextInt();<br>        <span class="hljs-type">int</span>[] A = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[N];           <span class="hljs-comment">//储存数列</span><br>        <span class="hljs-type">long</span>[] B = <span class="hljs-keyword">new</span> <span class="hljs-title class_">long</span>[<span class="hljs-number">100000</span>];    <span class="hljs-comment">//储存同余的前缀和的个数</span><br>        <span class="hljs-type">long</span> sum=<span class="hljs-number">0</span>;                     <span class="hljs-comment">//计算前缀和</span><br>        <span class="hljs-type">long</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;                <span class="hljs-comment">//储存结果</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; N; i++) &#123;<br>            A[i]= sc.nextInt();<br>            sum+=A[i];<br>            B[(<span class="hljs-type">int</span>)(sum % K)]++;        <span class="hljs-comment">//前缀和取余并记数</span><br>        &#125;<br>        result=result+B[<span class="hljs-number">0</span>];             <span class="hljs-comment">//余数为零的区间一定是k倍区间</span><br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;K;i++)&#123;<br>            result+=(B[i]*(B[i]-<span class="hljs-number">1</span>))/<span class="hljs-number">2</span>;  <span class="hljs-comment">//相同余数的前缀数相减得到的区间一定是K倍区间，再利用排列组合计算个数。</span><br>        &#125;<br>        System.out.println(result);<br>        sc.close();            <br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><p>可以将两个数据间全部日期进行遍历并判断是否为回文，但可能会超时，所以有两种改进方法</p>
-<p>1.遍历年份</p>
-<p>2.遍历月份和天数</p>
-<p>因为闰年02月29日的回文日期为92200229符合要求，所以二月按照闰年来算，则最多循环366次即可得到全部的回文日期，在进行比较前再将算出的不足四位数的年份排除后进行比较，最后得出结果。</p>
+<h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><p>（1）前缀数（从序列第一个数到它自身的所有数之和）：比如例题中的序列1 2 3 4 5的前缀数分别是1 3 6 10 15。</p>
+<p>（2）前缀数相减得到的区间：两个前缀数相减会得到一个区间比如5的前缀数15减去2的前缀数3可得到一个区间3 4 5。</p>
+<p>（3）储存同余的前缀数：将所有前缀数对K取余将每个余数及其个数进行存储如B[1]&#x3D;3表示余数为1的前缀数有3个。</p>
+<p>（4）两个同余的前缀数相减得到的区间一定是K倍区间：这算是一种数学规律如例题中15%2&#x3D;1，3%2&#x3D;1，（15-3）%2&#x3D;0也就是3 4 5是一个K倍区间。</p>
+<p>（5）如果前缀数对K取余为0则说明这一区间必为K倍区间：如10%2&#x3D;0，则1 2 3 4必为一个K倍区间，</p>
+<p>result&#x3D;result+B[0];直接加上即可。<br>（6）根据（4）可知任何两个同余的前缀数都可以获得一个前缀区间，则进行排列组合根据同余前缀数个数求出结果即可，还以例题为例B[1]&#x3D;3说明有三个余数是一的前缀数，我们要从中挑选两个组成一组求一个区间，共有C32（高中的排列组合3在下2在上）种组合方式为3*（3-1）&#x2F;2&#x3D;3，同理，余数为0的前缀（（5）计算的是从第一个数开始到它本身这个区间是k倍区间的个数所以并不冲突）数有1种组合方式加到一起总共有2+1&#x3D;3种再加上（5）中的2种共有6种。</p>
 
                 
               </div>
@@ -409,8 +384,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>回文日期（JAVA）</div>
-      <div>http://example.com/2023/05/05/回文日期（JAVA）/</div>
+      <div>k倍区间（JAVA）</div>
+      <div>http://example.com/2023/05/05/k倍区间（JAVA）/</div>
     </div>
     <div class="license-meta">
       
@@ -454,18 +429,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/05/05/k%E5%80%8D%E5%8C%BA%E9%97%B4%EF%BC%88JAVA%EF%BC%89/" title="k倍区间（JAVA）">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">k倍区间（JAVA）</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/05/05/%E4%BD%9C%E7%89%A9%E6%9D%82%E4%BA%A4%EF%BC%88JAVA%EF%BC%89/" title="作物杂交（JAVA）">
-                        <span class="hidden-mobile">作物杂交（JAVA）</span>
+                      <a href="/2023/05/05/%E5%9B%9E%E6%96%87%E6%97%A5%E6%9C%9F%EF%BC%88JAVA%EF%BC%89/" title="回文日期（JAVA）">
+                        <span class="hidden-mobile">回文日期（JAVA）</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
