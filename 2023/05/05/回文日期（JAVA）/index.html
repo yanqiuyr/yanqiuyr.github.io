@@ -16,26 +16,26 @@
   <meta name="author" content="晏萩">
   <meta name="keywords" content="">
   
-    <meta name="description" content="题目：作物杂交是作物栽培中重要的一步。已知有 N种作物 (编号 1至 N)，第 i种作物从播种到成熟的时间为 Ti。作物之间两两可以进行杂交，杂交时间取两种中时间较长的一方。如作物 A 种植时间为 5 天，作物 B 种植时间为 7 天，则 AB 杂交花费的时间为 7 天。作物杂交会产生固定的作物，新产生的作物仍然属于 N 种作物中的一种。 初始时，拥有其中 M 种作物的种子 (数量无限，可以支持多">
+    <meta name="description" content="题目：在日常生活中，通过年、月、日这三个要素可以表示出一个唯一确定的日期。 牛牛习惯用 8 位数字表示一个日期，其中，前 4 位代表年份，接下来 2 位代表月份，最后 2 位代表日期。显然：一个日期只有一种表示方法，而两个不同的日期的表示方法不会相同。 牛牛认为，一个日期是回文的，当且仅当表示这个日期的 8 位数字是回文的。现在，牛牛想知道：在他指定的两个日期之间包含这两个日期本身），有多少个真实">
 <meta property="og:type" content="article">
-<meta property="og:title" content="作物杂交（JAVA）">
-<meta property="og:url" content="http://example.com/2023/05/05/%E4%BD%9C%E7%89%A9%E6%9D%82%E4%BA%A4%EF%BC%88JAVA%EF%BC%89/index.html">
+<meta property="og:title" content="回文日期（JAVA）">
+<meta property="og:url" content="http://example.com/2023/05/05/%E5%9B%9E%E6%96%87%E6%97%A5%E6%9C%9F%EF%BC%88JAVA%EF%BC%89/index.html">
 <meta property="og:site_name" content="晏萩の博客">
-<meta property="og:description" content="题目：作物杂交是作物栽培中重要的一步。已知有 N种作物 (编号 1至 N)，第 i种作物从播种到成熟的时间为 Ti。作物之间两两可以进行杂交，杂交时间取两种中时间较长的一方。如作物 A 种植时间为 5 天，作物 B 种植时间为 7 天，则 AB 杂交花费的时间为 7 天。作物杂交会产生固定的作物，新产生的作物仍然属于 N 种作物中的一种。 初始时，拥有其中 M 种作物的种子 (数量无限，可以支持多">
+<meta property="og:description" content="题目：在日常生活中，通过年、月、日这三个要素可以表示出一个唯一确定的日期。 牛牛习惯用 8 位数字表示一个日期，其中，前 4 位代表年份，接下来 2 位代表月份，最后 2 位代表日期。显然：一个日期只有一种表示方法，而两个不同的日期的表示方法不会相同。 牛牛认为，一个日期是回文的，当且仅当表示这个日期的 8 位数字是回文的。现在，牛牛想知道：在他指定的两个日期之间包含这两个日期本身），有多少个真实">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/img/dm03.jpg">
-<meta property="article:published_time" content="2023-05-05T09:53:52.000Z">
-<meta property="article:modified_time" content="2023-05-05T09:59:38.226Z">
+<meta property="og:image" content="http://example.com/img/dm04.jpg">
+<meta property="article:published_time" content="2023-05-05T10:20:40.000Z">
+<meta property="article:modified_time" content="2023-05-05T10:25:35.959Z">
 <meta property="article:author" content="晏萩">
 <meta property="article:tag" content="JAVA">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="蓝桥杯">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/img/dm03.jpg">
+<meta name="twitter:image" content="http://example.com/img/dm04.jpg">
   
   
   
-  <title>作物杂交（JAVA） - 晏萩の博客</title>
+  <title>回文日期（JAVA） - 晏萩の博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -231,7 +231,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="作物杂交（JAVA）"></span>
+            <span id="subtitle" data-typed-text="回文日期（JAVA）"></span>
           
         </div>
 
@@ -242,8 +242,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-05-05 17:53" pubdate>
-          2023年5月5日 下午
+        <time datetime="2023-05-05 18:20" pubdate>
+          2023年5月5日 晚上
         </time>
       </span>
     
@@ -254,7 +254,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.8k 字
+          1.7k 字
         
       </span>
     
@@ -265,7 +265,7 @@
         
         
         
-          24 分钟
+          15 分钟
         
       </span>
     
@@ -307,61 +307,59 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">作物杂交（JAVA）</h1>
+            <h1 style="display: none">回文日期（JAVA）</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p>作物杂交是作物栽培中重要的一步。已知有 N种作物 (编号 1至 N)，第 i种作物从播种到成熟的时间为 Ti。作物之间两两可以进行杂交，杂交时间取两种中时间较长的一方。如作物 A 种植时间为 5 天，作物 B 种植时间为 7 天，则 AB 杂交花费的时间为 7 天。作物杂交会产生固定的作物，新产生的作物仍然属于 N 种作物中的一种。</p>
-<p>初始时，拥有其中 M 种作物的种子 (数量无限，可以支持多次杂交)。同时可以进行多个杂交过程。求问对于给定的目标种子，最少需要多少天能够得到。</p>
-<p>如存在 4 种作物 ABCD，各自的成熟时间为 5 天、7 天、3 天、8 天。初始拥有 AB 两种作物的种子，目标种子为 D，已知杂交情况为 A × B → C，A × C → D。则最短的杂交过程为：</p>
-<p>第 1 天到第 7 天 (作物 B 的时间)，A × B → C。</p>
-<p>第 8 天到第 12 天 (作物 A 的时间)，A × C → D。</p>
-<p>花费 12 天得到作物 D 的种子。<br><strong>输入描述</strong></p>
-<p>输入的第 1 行包含 4 个整数 N, M, K, T，N 表示作物种类总数 (编号 1 至 N)，M 表示初始拥有的作物种子类型数量，K 表示可以杂交的方案数，T 表示目标种子的编号。</p>
-<p>第 2 行包含 N 个整数，其中第 i 个整数表示第 i 种作物的种植时间 Ti (1≤Ti≤100)。</p>
-<p>第 3 行包含 M 个整数，分别表示已拥有的种子类型 Kj (1≤Kj≤M)，Kj 两两不同。</p>
-<p>第 4 至 K + 3 行，每行包含 3 个整数 A,B,C，表示第 A 类作物和第 B 类作物杂交可以获得第 C 类作物的种子。</p>
-<p>其中， 1≤N≤2000,2≤M≤N,1≤K≤105,1≤T≤N, 保证目标种子一定可以通过杂交得到。<br><strong>输出描述</strong></p>
-<p>输出一个整数，表示得到目标种子的最短杂交时间。</p>
-<p><strong>输入输出样例</strong><br>示例</p>
+                <h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p>在日常生活中，通过年、月、日这三个要素可以表示出一个唯一确定的日期。</p>
+<p>牛牛习惯用 8 位数字表示一个日期，其中，前 4 位代表年份，接下来 2 位代表月份，最后 2 位代表日期。显然：一个日期只有一种表示方法，而两个不同的日期的表示方法不会相同。</p>
+<p>牛牛认为，一个日期是回文的，当且仅当表示这个日期的 8 位数字是回文的。现在，牛牛想知道：在他指定的两个日期之间包含这两个日期本身），有多少个真实存在的日期是回文的。</p>
+<p>提示：</p>
+<p>一个 8 位数字是回文的，当且仅当对于所有的i (1≤i≤8) 从左向右数的第 i 个数字和第 9 - i个数字（即从右向左数的第 i 个数字）是相同的。</p>
+<p>例如：</p>
+<p>对于 2016 年 11 月 19 日，用 8 位数字 20161119 表示，它不是回文的。</p>
+<p>对于 2010 年 1 月 2 日，用 8 位数字 20100102 表示，它是回文的。</p>
+<p>对于 2010 年 10 月 2 日，用 8 位数字 20101002 表示，它不是回文的。</p>
+<p>每一年中都有 12 个月份：</p>
+<p>其中，1,3,5,7,8,10,12 月每个月有 31 天；4,6,9,11 月每个月有 30 天；而对于 2 月，闰年时有 29 天，平年时有 28 天。</p>
+<p>一个年份是闰年当且仅当它满足下列两种情况其中的一种：</p>
+<p>这个年份是 4 的整数倍，但不是 100 的整数倍；</p>
+<p>这个年份是 400 的整数倍。</p>
+<p>例如：</p>
+<p>以下几个年份都是闰年：2000,2012,2016。</p>
+<p>以下几个年份是平年：1900,2011,2014。</p>
+<p><strong>输入描述</strong><br>输入两行，每行包括一个 8 位数字。</p>
+<p>第一行表示牛牛指定的起始日期。</p>
+<p>第二行表示牛牛指定的终止日期。</p>
+<p>保证 datei 和都是真实存在的日期，且年份部分一定为 4 位数字，且首位数字不为 0。</p>
+<p>保证 date1 一定不晚于 date2。</p>
+<p><strong>输出描述</strong><br>输出一个整数，表示在date1 和 date2 之间，有多少个日期是回文的。</p>
+<p><strong>输入输出样例</strong><br>示例 1</p>
+<p><strong>输入</strong></p>
 <blockquote>
-<p>输入</p>
+<p>20110101<br>20111231</p>
 </blockquote>
+<p><strong>输出</strong></p>
 <blockquote>
-<p>6 2 4 6<br>5 3 4 6 4 9<br>1 2<br>1 2 3<br>1 3 4<br>2 3 5<br>4 5 6</p>
+<p>1</p>
 </blockquote>
+<p>示例 2</p>
+<p><strong>输入</strong></p>
 <blockquote>
-<p>输出</p>
+<p>20000101<br>20101231</p>
 </blockquote>
+<p><strong>输出</strong></p>
 <blockquote>
-<p>16</p>
+<p>2</p>
 </blockquote>
-<blockquote>
-<p>样例说明</p>
-</blockquote>
-<p>第 1 天至第 5 天，将编号 1 与编号 2 的作物杂交，得到编号 3 的作物种子。</p>
-<p>第 6 天至第 10 天，将编号 1 与编号 3 的作物杂交，得到编号 4 的作物种子。</p>
-<p>第 6 天至第 9 天，将编号 2 与编号 3 的作物杂交，得到编号 5 的作物种子。</p>
-<p>第 11 天至第 16 天，将编号 4 与编号 5 的作物杂交，得到编号 6 的作物种子。</p>
-<p>总共花费 16 天。</p>
-<p><strong>运行限制</strong><br>最大运行时间：2s<br>最大运行内存: 256M</p>
-<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.Scanner;<br><span class="hljs-comment">// 1:无需package</span><br><span class="hljs-comment">// 2: 类名必须Main, 不可修改</span><br> <br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>    <span class="hljs-keyword">static</span> <span class="hljs-type">int</span> N,M,K,T;     <br>    <span class="hljs-keyword">static</span> <span class="hljs-type">int</span>[] time;         <span class="hljs-comment">//time数组记录每个作物的成熟时间</span><br>    <span class="hljs-keyword">static</span> <span class="hljs-type">boolean</span>[] flag;     <span class="hljs-comment">//用boolean类型的数组记录是否拥有某个作物的种子拥有记为true</span><br>    <span class="hljs-keyword">static</span> <span class="hljs-type">int</span>[][] line;       <span class="hljs-comment">//line为一个K行3列的二维数组用于存储合成方案</span><br>    <span class="hljs-keyword">static</span>  <span class="hljs-type">int</span> [] maxtime;    <span class="hljs-comment">//用于存储每种作物杂交所需要的成熟时间</span><br>    <span class="hljs-keyword">static</span> <span class="hljs-type">int</span>[] res;          <span class="hljs-comment">//用于存储每种作物最终合成所需要的最终时间</span><br> <br> <br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        Scanner scan=<span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br> <br>        N=scan.nextInt();<br>        M=scan.nextInt();<br>        K=scan.nextInt();<br>        T=scan.nextInt();           <span class="hljs-comment">//第一行输入</span><br>        time=<span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[N+<span class="hljs-number">1</span>];<br>        flag=<span class="hljs-keyword">new</span> <span class="hljs-title class_">boolean</span>[N+<span class="hljs-number">1</span>];<br>        line=<span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[K][<span class="hljs-number">3</span>];<br>        maxtime=<span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[K];<br>        res=<span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[N+<span class="hljs-number">1</span>];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;N+<span class="hljs-number">1</span>;i++)&#123;<br>            time[i]=scan.nextInt();  <span class="hljs-comment">//第二行输入</span><br>        &#125;<br> <br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;M;i++)&#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">seed</span> <span class="hljs-operator">=</span> scan.nextInt();<br>            flag[seed] = <span class="hljs-literal">true</span>;<br>        &#125;                             <span class="hljs-comment">//第三行输入</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;K;i++) &#123;<br>            line[i][<span class="hljs-number">0</span>]=scan.nextInt(); <span class="hljs-comment">// A</span><br>            line[i][<span class="hljs-number">1</span>]=scan.nextInt(); <span class="hljs-comment">// B</span><br>            line[i][<span class="hljs-number">2</span>]=scan.nextInt(); <span class="hljs-comment">// C</span><br>            maxtime[i]=Math.max(time[line[i][<span class="hljs-number">0</span>]],time[line[i][<span class="hljs-number">1</span>]]);<br>        &#125;                              <span class="hljs-comment">//第四行输入</span><br>        System.out.println(time(T));<br>        scan.close();<br> <br> <br>    &#125;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">int</span> <span class="hljs-title function_">time</span><span class="hljs-params">(<span class="hljs-type">int</span> index)</span>&#123;   <br>        <span class="hljs-keyword">if</span> (flag[index]==<span class="hljs-literal">false</span>)&#123;<br>           <span class="hljs-type">int</span> expend=Integer.MAX_VALUE;  <span class="hljs-comment">//记录时间选取最小值初始值为Integer.MAX_VALUE（表示int数据类型的最大取值数：2 147 483 647）防止在第一次比较时造成干扰</span><br>           <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;K;i++)&#123;<br>               <span class="hljs-keyword">if</span> (line[i][<span class="hljs-number">2</span>]==index)&#123;<br>                   expend=Math.min(maxtime[i]+Math.max(time(line[i][<span class="hljs-number">0</span>]),time(line[i][<span class="hljs-number">1</span>])),expend);<br>               &#125;<br>           &#125;<br>           flag[index]=<span class="hljs-literal">true</span>;<br>           res[index]=expend;<br> <br>        &#125;<br>        <span class="hljs-keyword">return</span> res[index];<br>    &#125;                              <span class="hljs-comment">//time方法遍历加递归得出合成目标作物所需要的时间</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<p><strong>运行限制</strong><br>最大运行时间：1s<br>最大运行内存: 256M</p>
+<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.Scanner;<br> <br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        Scanner scan=<span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br>   <span class="hljs-type">int</span> date1,date2,result=<span class="hljs-number">0</span>;               <span class="hljs-comment">//date1为第一个数据，date2为第二个数据，result用来记录结果。</span><br>        <span class="hljs-type">int</span> [] yue=&#123;<span class="hljs-number">0</span>,<span class="hljs-number">31</span>,<span class="hljs-number">29</span>,<span class="hljs-number">31</span>,<span class="hljs-number">30</span>,<span class="hljs-number">31</span>,<span class="hljs-number">30</span>,<span class="hljs-number">31</span>,<span class="hljs-number">31</span>,<span class="hljs-number">30</span>,<span class="hljs-number">31</span>,<span class="hljs-number">30</span>,<span class="hljs-number">31</span>&#125;;  <span class="hljs-comment">//将各个月份天数记录下来，二月记为29天从yue[1]为第一个月。</span><br>       date1=scan.nextInt();<br>       date2=scan.nextInt();<br>   <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=<span class="hljs-number">12</span>;i++)&#123;<br>       <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j=<span class="hljs-number">1</span>;j&lt;=yue[i];j++)&#123;<br>           <span class="hljs-type">int</span> mm=i,dd=j,yyyy=dd%<span class="hljs-number">10</span>*<span class="hljs-number">1000</span>+dd/<span class="hljs-number">10</span>*<span class="hljs-number">100</span>+mm%<span class="hljs-number">10</span>*<span class="hljs-number">10</span>+mm/<span class="hljs-number">10</span>;  <span class="hljs-comment">//遍历月份和天数，通过计算得出回文日期对应的年份</span><br>           <span class="hljs-keyword">if</span> (yyyy&lt;<span class="hljs-number">1000</span>)&#123;<br>               <span class="hljs-keyword">continue</span>;                            <span class="hljs-comment">//如果年份不是四位数则跳过此次循环</span><br>           &#125;<br>           <span class="hljs-type">int</span> date3=yyyy*<span class="hljs-number">10000</span>+mm*<span class="hljs-number">100</span>+dd;          <span class="hljs-comment">//将得到的日期转换为八位数，与输入的两个数据作比较</span><br>           <span class="hljs-keyword">if</span> (date3&gt;=date1&amp;&amp;date3&lt;=date2)&#123;<br>               result++;                             <span class="hljs-comment">//得到结果</span><br>           &#125;<br>       &#125;<br>   &#125;<br>        System.out.println(result);<br> <br>        scan.close();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><p>本题采用了DFS(深度优先搜索算法)，先明确目标作物（以题目为例）</p>
-<p>6需要4和5杂交需要6天。</p>
-<p>4和5又需要继续向下杂交获得。</p>
-<p>4需要1和3杂交需要5天。</p>
-<p>5需要2和3杂交需要4天。</p>
-<p>3需要继续杂交获得。</p>
-<p>3需要1和2杂交获得需要5天。</p>
-<p>所以得到4所需要天数为5+5&#x3D;10天。</p>
-<p>得到5所需要天数为5+4&#x3D;9天。</p>
-<p>只有得到4和5才能开始6的杂交工作所以只有在第10天才能开始6号作物的杂交即取获得4号作物和5号作物时间中的最大值。</p>
-<p>所以获得6号作物所需要的天数为10+6&#x3D;16天。</p>
-<p>1.由此可以分析出想得到6号作物需要它本身的杂交时间加上两个合成材料通过杂交获得时间中的最大值</p>
-<p>2.本题中并未说明目标作物只有一种合成路径，测试用例中也确实出现了有多条合成路径的情况所以我们还需要从多条路径中选出用时最短的那一条</p>
-<p>结合1.和2.可以得到：expend&#x3D;Math.min(maxtime[i]+Math.max(time(line[i][0]),time(line[i][1])),expend);再结合遍历和递归操作即可。</p>
+<h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><p>可以将两个数据间全部日期进行遍历并判断是否为回文，但可能会超时，所以有两种改进方法</p>
+<p>1.遍历年份</p>
+<p>2.遍历月份和天数</p>
+<p>因为闰年02月29日的回文日期为92200229符合要求，所以二月按照闰年来算，则最多循环366次即可得到全部的回文日期，在进行比较前再将算出的不足四位数的年份排除后进行比较，最后得出结果。</p>
 
                 
               </div>
@@ -411,8 +409,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>作物杂交（JAVA）</div>
-      <div>http://example.com/2023/05/05/作物杂交（JAVA）/</div>
+      <div>回文日期（JAVA）</div>
+      <div>http://example.com/2023/05/05/回文日期（JAVA）/</div>
     </div>
     <div class="license-meta">
       
@@ -456,18 +454,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/05/05/%E5%9B%9E%E6%96%87%E6%97%A5%E6%9C%9F%EF%BC%88JAVA%EF%BC%89/" title="回文日期（JAVA）">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">回文日期（JAVA）</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/05/05/%E7%A0%9D%E7%A0%81%E7%A7%B0%E9%87%8D%EF%BC%88JAVA%EF%BC%89/" title="砝码称重（JAVA）">
-                        <span class="hidden-mobile">砝码称重（JAVA）</span>
+                      <a href="/2023/05/05/%E4%BD%9C%E7%89%A9%E6%9D%82%E4%BA%A4%EF%BC%88JAVA%EF%BC%89/" title="作物杂交（JAVA）">
+                        <span class="hidden-mobile">作物杂交（JAVA）</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
