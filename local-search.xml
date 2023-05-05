@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>砝码称重（JAVA）</title>
+    <link href="/2023/05/05/%E7%A0%9D%E7%A0%81%E7%A7%B0%E9%87%8D%EF%BC%88JAVA%EF%BC%89/"/>
+    <url>/2023/05/05/%E7%A0%9D%E7%A0%81%E7%A7%B0%E9%87%8D%EF%BC%88JAVA%EF%BC%89/</url>
+    
+    <content type="html"><![CDATA[<h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p>你有一架天平和 N个砝码，这 N 个砝码重量依次是 W1, W2, · · · , WN。</p><p>请你计算一共可以称出多少种不同的重量？ 注意砝码可以放在天平两边。</p><p><strong>输入格式</strong></p><p>输入的第一行包含一个整数 N。</p><p>第二行包含 N 个整数：W1, W2, W3, · · · , WN。</p><p><strong>输出格式</strong></p><p>输出一个整数代表答案</p><p><strong>样例输入</strong></p><blockquote><p>3<br>1 4 6</p></blockquote><p><strong>样例输出</strong></p><blockquote><p>10</p></blockquote><p><strong>样例说明</strong></p><p>能称出的 10 种重量是：1、2、3、4、5、6、7、9、10、11。</p><p>1 &#x3D; 1；</p><p>2 &#x3D; 6 − 4 (2&#x3D;6−4(天平一边放 66，另一边放 4)；</p><p>3 &#x3D; 4 − 1；</p><p>4 &#x3D; 4；</p><p>5 &#x3D; 6 − 1；</p><p>6 &#x3D; 6；</p><p>7 &#x3D; 1 + 6；</p><p>9 &#x3D; 4 + 6 − 1；</p><p>10 &#x3D; 4 + 6；</p><p>11 &#x3D; 1 + 4 + 6。</p><p><strong>评测用规模与约定</strong></p><p>对于 50%的评测用例，1 ≤ N ≤ 15。</p><p>对于所有评测用例，1 ≤ N ≤ 100,N个砝码总重不超过 100000。</p><p><strong>运行限制</strong></p><ul><li>最大运行时间：1s</li><li>最大运行内存: 256M</li></ul><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.Scanner;<br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">main</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        Scanner sc=<span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br>        <span class="hljs-type">int</span> N= sc.nextInt();<br>        <span class="hljs-type">int</span> fama[]=<span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[N];     <span class="hljs-comment">//储存各砝码重量</span><br>        <span class="hljs-type">int</span> sum=<span class="hljs-number">0</span>;                 <span class="hljs-comment">//储存所有砝码可称出的最大重量</span><br>        <span class="hljs-type">int</span> max=<span class="hljs-number">0</span>;                 <span class="hljs-comment">//储存最多可以称出几种重量</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;N;i++)&#123;<br>            fama[i]=sc.nextInt();<br>            sum+=fama[i];<br>        &#125;<br>        <span class="hljs-type">int</span> dp[][]=<span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[N+<span class="hljs-number">1</span>][<span class="hljs-number">2</span>*sum];  <span class="hljs-comment">//二维数组dp[i][j]  i表示前i个砝码j表示前i个砝码是否可以称出j的重量  设置成2*sum防止数组越界</span><br>        dp[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>]=<span class="hljs-number">1</span>;               <span class="hljs-comment">//0个砝码一定可以称出0的重量所以直接设为1</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=N;i++)&#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j=sum;j&gt;=<span class="hljs-number">0</span>;j--)&#123;<br>                <span class="hljs-keyword">if</span> (dp[i-<span class="hljs-number">1</span>][j]==<span class="hljs-number">1</span>||dp[i-<span class="hljs-number">1</span>][Math.abs(j-fama[i-<span class="hljs-number">1</span>])]==<span class="hljs-number">1</span>||dp[i-<span class="hljs-number">1</span>][j+fama[i-<span class="hljs-number">1</span>]]==<span class="hljs-number">1</span>)&#123;<br>                    dp[i][j]=<span class="hljs-number">1</span>;<br>                &#125;<br>                <span class="hljs-keyword">else</span> &#123;<br>                    dp[i][j]=<span class="hljs-number">0</span>;<br>                &#125;<br>            &#125;<br>        &#125;                    <span class="hljs-comment">//先从第一个砝码开始在零个砝码的基础上放到天平左边减去此砝码重量放到右边加上此砝码重量，依次类推获得可以称出的所有重量。</span><br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span>  j= <span class="hljs-number">1</span>; j&lt;= sum; j++)<br>            <span class="hljs-keyword">if</span>(dp[N][j]==<span class="hljs-number">1</span>) max++;<br>        System.out.println(max);  <span class="hljs-comment">//dp[N][j]==1时表示N个砝码可以称出j的重量由于重量0不算入最终结果所以j从1开始，则max加一最终输出max</span><br>        sc.close();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><p>运用dp(动态规划)思想，dp[i][j]表示i个砝码是否可以称出j的重量。</p><p>由于0个砝码一定可以称出0这个重量所以dp[0][0]&#x3D;&#x3D;1，之后在此基础上加入第一个砝码，放到天平左边则减去第一个砝码重量，放到右边则加上第一个砝码的重量依次类推得到N个砝码所能称出的所有重量（最终答案重量0排除在外所以从重量1开始遍历并进行统计）。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日常练习</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>JAVA</tag>
+      
+      <tag>算法</tag>
+      
+      <tag>蓝桥杯</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>数字三角形（JAVA）</title>
     <link href="/2023/05/02/%E6%95%B0%E5%AD%97%E4%B8%89%E8%A7%92%E5%BD%A2%EF%BC%88JAVA%EF%BC%89/"/>
     <url>/2023/05/02/%E6%95%B0%E5%AD%97%E4%B8%89%E8%A7%92%E5%BD%A2%EF%BC%88JAVA%EF%BC%89/</url>
