@@ -16,26 +16,26 @@
   <meta name="author" content="晏萩">
   <meta name="keywords" content="">
   
-    <meta name="description" content="题目：  代码：12345678910111213141516171819public class Main &amp;#123;    static int result&#x3D;0;                &#x2F;&#x2F;储存结果种数    public static void main(String[] args) &amp;#123;        select(0,0);        System.out.pri">
+    <meta name="description" content="题目：本题为填空题，只需要算出结果后，在代码中使用输出语句将所填结果输出即可。 小蓝学习了最短路径之后特别高兴，他定义了一个特别的图，希望找到图 中的最短路径。 小蓝的图由 2021 个结点组成，依次编号 1 至 2021。 对于两个不同的结点 a, b，如果 a 和 b 的差的绝对值大于 21，则两个结点 之间没有边相连；如果 a 和 b 的差的绝对值小于等于 21，则两个点之间有一条 长度为">
 <meta property="og:type" content="article">
-<meta property="og:title" content="牌型种数（JAVA）">
-<meta property="og:url" content="http://example.com/2023/05/07/%E7%89%8C%E5%9E%8B%E7%A7%8D%E6%95%B0%EF%BC%88JAVA%EF%BC%89/index.html">
+<meta property="og:title" content="路径（JAVA）">
+<meta property="og:url" content="http://example.com/2023/05/07/%E8%B7%AF%E5%BE%84%EF%BC%88JAVA%EF%BC%89/index.html">
 <meta property="og:site_name" content="晏萩の博客">
-<meta property="og:description" content="题目：  代码：12345678910111213141516171819public class Main &amp;#123;    static int result&#x3D;0;                &#x2F;&#x2F;储存结果种数    public static void main(String[] args) &amp;#123;        select(0,0);        System.out.pri">
+<meta property="og:description" content="题目：本题为填空题，只需要算出结果后，在代码中使用输出语句将所填结果输出即可。 小蓝学习了最短路径之后特别高兴，他定义了一个特别的图，希望找到图 中的最短路径。 小蓝的图由 2021 个结点组成，依次编号 1 至 2021。 对于两个不同的结点 a, b，如果 a 和 b 的差的绝对值大于 21，则两个结点 之间没有边相连；如果 a 和 b 的差的绝对值小于等于 21，则两个点之间有一条 长度为">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/img/dm15.jpg">
-<meta property="article:published_time" content="2023-05-07T04:27:40.000Z">
-<meta property="article:modified_time" content="2023-05-07T04:33:24.853Z">
+<meta property="og:image" content="http://example.com/img/dm16.jpg">
+<meta property="article:published_time" content="2023-05-07T04:34:44.000Z">
+<meta property="article:modified_time" content="2023-05-07T04:36:56.097Z">
 <meta property="article:author" content="晏萩">
 <meta property="article:tag" content="JAVA">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="蓝桥杯">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/img/dm15.jpg">
+<meta name="twitter:image" content="http://example.com/img/dm16.jpg">
   
   
   
-  <title>牌型种数（JAVA） - 晏萩の博客</title>
+  <title>路径（JAVA） - 晏萩の博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -231,7 +231,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="牌型种数（JAVA）"></span>
+            <span id="subtitle" data-typed-text="路径（JAVA）"></span>
           
         </div>
 
@@ -242,8 +242,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-05-07 12:27" pubdate>
-          2023年5月7日 中午
+        <time datetime="2023-05-07 12:34" pubdate>
+          2023年5月7日 下午
         </time>
       </span>
     
@@ -254,7 +254,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          656 字
+          1.3k 字
         
       </span>
     
@@ -265,7 +265,7 @@
         
         
         
-          6 分钟
+          11 分钟
         
       </span>
     
@@ -307,21 +307,31 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">牌型种数（JAVA）</h1>
+            <h1 style="display: none">路径（JAVA）</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p> <img src="/img/tupian03.png" srcset="/img/jiazai.webp" lazyload></p>
-<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>    <span class="hljs-keyword">static</span> <span class="hljs-type">int</span> result=<span class="hljs-number">0</span>;                <span class="hljs-comment">//储存结果种数</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        select(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>);<br>        System.out.println(result);<br>    &#125;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">select</span><span class="hljs-params">(<span class="hljs-type">int</span> x,<span class="hljs-type">int</span> y)</span>&#123;   <span class="hljs-comment">//递归</span><br>        <span class="hljs-keyword">if</span> (x&gt;<span class="hljs-number">13</span>||y&gt;<span class="hljs-number">13</span>)&#123;<br>            <span class="hljs-keyword">return</span>;<br>        &#125;<br>        <span class="hljs-keyword">if</span> (x==<span class="hljs-number">13</span>&amp;&amp;y==<span class="hljs-number">13</span>)&#123;<br>            result++;<br>            <span class="hljs-keyword">return</span>;<br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">5</span>;i++)&#123;       <span class="hljs-comment">//0，1，2，3，4，共五种情况</span><br>            select(x+<span class="hljs-number">1</span>,y+i);<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+                <h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p><strong>本题为填空题，只需要算出结果后，在代码中使用输出语句将所填结果输出即可。</strong></p>
+<p>小蓝学习了最短路径之后特别高兴，他定义了一个特别的图，希望找到图 中的最短路径。</p>
+<p>小蓝的图由 2021 个结点组成，依次编号 1 至 2021。</p>
+<p>对于两个不同的结点 a, b，如果 a 和 b 的差的绝对值大于 21，则两个结点 之间没有边相连；如果 a 和 b 的差的绝对值小于等于 21，则两个点之间有一条 长度为 a 和 b 的最小公倍数的无向边相连。</p>
+<p>例如：结点 1 和结点 23 之间没有边相连；结点 3 和结点 24 之间有一条无 向边，长度为 24；结点 15 和结点 25 之间有一条无向边，长度为 75。</p>
+<p>请计算，结点 1 和结点 2021 之间的最短路径长度是多少。</p>
+<p>提示：建议使用计算机编程解决问题。</p>
+<p><strong>运行限制</strong><br>最大运行时间：1s<br>最大运行内存: 128M</p>
+<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">int</span> n=<span class="hljs-number">2022</span>;<br>        <span class="hljs-type">int</span>[] dp=<span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[n];              <span class="hljs-comment">//n设为2022数组从1开始dp方便计算</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++)&#123;<br>            dp[i]=Integer.MAX_VALUE;       <span class="hljs-comment">//给数组每个值都赋最大值，避免对接下来比较造成影响。</span><br>        &#125;<br>        dp[<span class="hljs-number">1</span>]=<span class="hljs-number">0</span>;                           <span class="hljs-comment">//初始dp[1]赋值为1（dp数组的含义思路里会提到）</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=<span class="hljs-number">2020</span>;i++)&#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j=i+<span class="hljs-number">1</span>;j&lt;n&amp;&amp;(j-i&lt;=<span class="hljs-number">21</span>);j++)&#123;<br>                dp[j]=Math.min(dp[j],dp[i]+f(i,j));  <span class="hljs-comment">//从1开始将到达每个点的最短路径进行存储</span><br>            &#125;<br>        &#125;<br>        System.out.println(dp[<span class="hljs-number">2021</span>]);     <span class="hljs-comment">//输出dp[2021]</span><br>    &#125;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">int</span> <span class="hljs-title function_">f</span><span class="hljs-params">(<span class="hljs-type">int</span> a,<span class="hljs-type">int</span> b)</span>&#123;  <span class="hljs-comment">//求两个数的最小公倍数</span><br>        <span class="hljs-type">int</span> c=<span class="hljs-number">0</span>,d=a,e=b;<br>        <span class="hljs-keyword">while</span>(a%b!=<span class="hljs-number">0</span>)&#123;<br>            c=a%b;<br>            a=b;<br>            b=c;<br>        &#125;<br> <br>        <span class="hljs-keyword">return</span> d*e/b;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><p>可以拿十三次每次拿一张牌，但每张牌都要有十三种情况拿到所以复杂度是13^13复杂度过高。所以换一种思路</p>
-<p>13种牌每张牌只有四张，所以我们拿十三张牌每种牌的个数可能是0，1，2，3，4张，共五种情况。</p>
-<p>所以我们采取递归思想：</p>
-<p>select(int x,int y);</p>
-<p>x:目前在拿哪张牌（牌型）。</p>
-<p>y:总共拿了多少张牌。</p>
-<p>这样每张牌从十三种情况变为了五种，复杂度变为了5^13,并且如果在中途y&gt;13那么可以直接舍弃这种情况（比如1取了4张，2取了4张，3取了4张，4取了4张总共已经16张牌舍弃），如果取到了第十三种牌型的牌，而且总数正好是13则种数加1。</p>
+<h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><p>运用了动态规划（dp）的思想先解释一下dp数组的含义</p>
+<p>dp[i]表示从1到i的最短距离。</p>
+<p>当我们要求一个dp[i]的值时我们只需要比较取最小值即可，举个例子帮助理解。</p>
+<p>比如我们要求dp[4],</p>
+<p>则第一遍遍历dp[4]暂时为从1直接到4路径的长度（4），</p>
+<p>第二遍遍历dp[4]的值为Math.min(从1直接到4的路径长度（4），从1到2的最短路径再加上2到4的路径长度（6）)，</p>
+<p>第三次遍历dp[4]的值为Math.min(从1直接到4的路径长度（4），从1到3的最短路径加上3到4的路径长度（15）)</p>
+<p>所以dp[4]最终&#x3D;4。</p>
+<p>f方法是求小公倍数（先求a,b的最大公约数（假设是c）再求最小公倍数a*b&#x2F;c）然后求路径。</p>
+<p>dp[2021]即为所求。</p>
 
                 
               </div>
@@ -371,8 +381,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>牌型种数（JAVA）</div>
-      <div>http://example.com/2023/05/07/牌型种数（JAVA）/</div>
+      <div>路径（JAVA）</div>
+      <div>http://example.com/2023/05/07/路径（JAVA）/</div>
     </div>
     <div class="license-meta">
       
@@ -416,9 +426,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/05/07/%E8%B7%AF%E5%BE%84%EF%BC%88JAVA%EF%BC%89/" title="路径（JAVA）">
+                      <a href="/2023/05/07/%E6%9D%A8%E8%BE%89%E4%B8%89%E8%A7%92%E5%BD%A2%EF%BC%88JAVA%EF%BC%89/" title="杨辉三角形（JAVA）">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">路径（JAVA）</span>
+                        <span class="hidden-mobile">杨辉三角形（JAVA）</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -426,8 +436,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/05/07/%E6%95%B0%E4%BD%8D%E6%8E%92%E5%BA%8F%EF%BC%88JAVA%EF%BC%89/" title="数位排序（JAVA）">
-                        <span class="hidden-mobile">数位排序（JAVA）</span>
+                      <a href="/2023/05/07/%E7%89%8C%E5%9E%8B%E7%A7%8D%E6%95%B0%EF%BC%88JAVA%EF%BC%89/" title="牌型种数（JAVA）">
+                        <span class="hidden-mobile">牌型种数（JAVA）</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

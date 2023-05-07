@@ -4,6 +4,64 @@
   
   
   <entry>
+    <title>杨辉三角形（JAVA）</title>
+    <link href="/2023/05/07/%E6%9D%A8%E8%BE%89%E4%B8%89%E8%A7%92%E5%BD%A2%EF%BC%88JAVA%EF%BC%89/"/>
+    <url>/2023/05/07/%E6%9D%A8%E8%BE%89%E4%B8%89%E8%A7%92%E5%BD%A2%EF%BC%88JAVA%EF%BC%89/</url>
+    
+    <content type="html"><![CDATA[<h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p>下面的图形是著名的<a href="https://so.csdn.net/so/search?q=%E6%9D%A8%E8%BE%89%E4%B8%89%E8%A7%92%E5%BD%A2&spm=1001.2101.3001.7020">杨辉三角形</a>：</p><p><img src="/img/tupian04.png"></p><p>如果我们按从上到下、从左到右的顺序把所有数排成一列，可以得到如下数列：1,1,1,1,2,1,1,3,3,1,1,4,6,4,1,⋯</p><p>给定一个正整数 N，请你输出数列中第一次出现 N 是在第几个数？</p><p><strong>输入描述</strong><br>输入一个整数 N。</p><p><strong>输出描述</strong><br>输出一个整数代表答案。</p><p><strong>输入输出样例</strong><br>示例 1</p><p><strong>输入</strong></p><blockquote><p>6</p></blockquote><p><strong>输出</strong></p><blockquote><p>13</p></blockquote><p><strong>评测用例规模与约定</strong><br>对于 20% 的评测用例，1≤N≤10； 对于所有评测用例，1≤N≤1000000000。</p><p><strong>运行限制</strong><br>最大运行时间：1s<br>最大运行内存: 256M</p><h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><p>首先我想到的是将杨辉三角形构建出来再进行查找，但N的最大值是1*10^9，经过亲身实践只能通过40%的用例</p><p><img src="/img/tupian07.png"></p><p> 所以需要找规律</p><p>杨辉三角形：</p><p><img src="/img/tupian05.png"></p><p> 需要考虑的部分：</p><p><img src="/img/tupian06.png"></p><p>其中6&#x3D;c(2,4) 2&#x3D;c(1,2)因为10^9&gt;c(16,32)但10^9&lt;c(17,34),所以在16列以内肯定能找到所有的数，有效数列是0-16列。又因为每一行都是从左到右递增，每一列都是从上到下递增，每个数字都可以表示为c(i,j)。所以我们可以从十六列开始，逐步往前找采用二分行的方式找到答案。</p><h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.Scanner;<br><span class="hljs-comment">// 1:无需package</span><br><span class="hljs-comment">// 2: 类名必须Main, 不可修改</span><br> <br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br> <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        Scanner sc=<span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br>        <span class="hljs-type">long</span> N=sc.nextLong();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> k=<span class="hljs-number">16</span>;k&gt;=<span class="hljs-number">0</span>;k--)&#123;<br>            <span class="hljs-type">long</span> <span class="hljs-variable">l</span> <span class="hljs-operator">=</span> <span class="hljs-number">2</span> * k, r = Math.max(N, l), mid=<span class="hljs-number">0</span>;  <span class="hljs-comment">//代码是根据其它博主的博客写的这里我的理解是从2*k行开始才有的第16列有效数据然后加上r（r的理解有些模糊）再用二分查在哪一行，第16列没有满足的值继续往前查。</span><br>            <span class="hljs-keyword">while</span> (l &lt;= r) &#123;<span class="hljs-comment">//对第k列二分查找行</span><br>                mid = l + (r - l) / <span class="hljs-number">2</span>;<span class="hljs-comment">//二分行</span><br>                <span class="hljs-type">long</span> <span class="hljs-variable">x</span> <span class="hljs-operator">=</span> f(mid, k,N);<br>                <span class="hljs-keyword">if</span> (x == N)<br>                    <span class="hljs-keyword">break</span>;<br>                <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (x &gt; N)<br>                    r = mid - <span class="hljs-number">1</span>;<br>                <span class="hljs-keyword">else</span><br>                    l = mid + <span class="hljs-number">1</span>;<br>            &#125;<br>            <span class="hljs-keyword">if</span> (f(mid, k,N) == N)<br>            &#123;<span class="hljs-comment">//第mid行、第k列的数就是N</span><br>                System.out.println((mid + <span class="hljs-number">1</span>) * mid / <span class="hljs-number">2</span> + k + <span class="hljs-number">1</span>);<br>                <span class="hljs-comment">//杨辉三角形的行数符号公差为1的等差数列，故用等差数列求和公式</span><br>                <span class="hljs-comment">//加上第几列再加上1（因为列从0开始）即可得出该数的位置</span><br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>        &#125;<br>        sc.close();<br> <br>        &#125;<br>        <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">long</span> <span class="hljs-title function_">f</span><span class="hljs-params">(<span class="hljs-type">long</span> a,<span class="hljs-type">int</span> b,<span class="hljs-type">long</span> N)</span>&#123;   <span class="hljs-comment">//求c（i，j）的值,也就是i行j列的值</span><br>            <span class="hljs-type">long</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">long</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> a, j = <span class="hljs-number">1</span>; j &lt;= b; i--, j++)<br>            &#123;<br>                res = res * i / j;<br>                <span class="hljs-keyword">if</span> (res &gt; N )<span class="hljs-comment">//如果中间结果超过N就直接返回</span><br>                    <span class="hljs-keyword">return</span> res;<br>            &#125;<br>            <span class="hljs-keyword">return</span> res;<br>        &#125;<br>        &#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>日常练习</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>JAVA</tag>
+      
+      <tag>算法</tag>
+      
+      <tag>蓝桥杯</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>路径（JAVA）</title>
+    <link href="/2023/05/07/%E8%B7%AF%E5%BE%84%EF%BC%88JAVA%EF%BC%89/"/>
+    <url>/2023/05/07/%E8%B7%AF%E5%BE%84%EF%BC%88JAVA%EF%BC%89/</url>
+    
+    <content type="html"><![CDATA[<h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p><strong>本题为填空题，只需要算出结果后，在代码中使用输出语句将所填结果输出即可。</strong></p><p>小蓝学习了最短路径之后特别高兴，他定义了一个特别的图，希望找到图 中的最短路径。</p><p>小蓝的图由 2021 个结点组成，依次编号 1 至 2021。</p><p>对于两个不同的结点 a, b，如果 a 和 b 的差的绝对值大于 21，则两个结点 之间没有边相连；如果 a 和 b 的差的绝对值小于等于 21，则两个点之间有一条 长度为 a 和 b 的最小公倍数的无向边相连。</p><p>例如：结点 1 和结点 23 之间没有边相连；结点 3 和结点 24 之间有一条无 向边，长度为 24；结点 15 和结点 25 之间有一条无向边，长度为 75。</p><p>请计算，结点 1 和结点 2021 之间的最短路径长度是多少。</p><p>提示：建议使用计算机编程解决问题。</p><p><strong>运行限制</strong><br>最大运行时间：1s<br>最大运行内存: 128M</p><h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">int</span> n=<span class="hljs-number">2022</span>;<br>        <span class="hljs-type">int</span>[] dp=<span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[n];              <span class="hljs-comment">//n设为2022数组从1开始dp方便计算</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++)&#123;<br>            dp[i]=Integer.MAX_VALUE;       <span class="hljs-comment">//给数组每个值都赋最大值，避免对接下来比较造成影响。</span><br>        &#125;<br>        dp[<span class="hljs-number">1</span>]=<span class="hljs-number">0</span>;                           <span class="hljs-comment">//初始dp[1]赋值为1（dp数组的含义思路里会提到）</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=<span class="hljs-number">2020</span>;i++)&#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j=i+<span class="hljs-number">1</span>;j&lt;n&amp;&amp;(j-i&lt;=<span class="hljs-number">21</span>);j++)&#123;<br>                dp[j]=Math.min(dp[j],dp[i]+f(i,j));  <span class="hljs-comment">//从1开始将到达每个点的最短路径进行存储</span><br>            &#125;<br>        &#125;<br>        System.out.println(dp[<span class="hljs-number">2021</span>]);     <span class="hljs-comment">//输出dp[2021]</span><br>    &#125;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">int</span> <span class="hljs-title function_">f</span><span class="hljs-params">(<span class="hljs-type">int</span> a,<span class="hljs-type">int</span> b)</span>&#123;  <span class="hljs-comment">//求两个数的最小公倍数</span><br>        <span class="hljs-type">int</span> c=<span class="hljs-number">0</span>,d=a,e=b;<br>        <span class="hljs-keyword">while</span>(a%b!=<span class="hljs-number">0</span>)&#123;<br>            c=a%b;<br>            a=b;<br>            b=c;<br>        &#125;<br> <br>        <span class="hljs-keyword">return</span> d*e/b;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><p>运用了动态规划（dp）的思想先解释一下dp数组的含义</p><p>dp[i]表示从1到i的最短距离。</p><p>当我们要求一个dp[i]的值时我们只需要比较取最小值即可，举个例子帮助理解。</p><p>比如我们要求dp[4],</p><p>则第一遍遍历dp[4]暂时为从1直接到4路径的长度（4），</p><p>第二遍遍历dp[4]的值为Math.min(从1直接到4的路径长度（4），从1到2的最短路径再加上2到4的路径长度（6）)，</p><p>第三次遍历dp[4]的值为Math.min(从1直接到4的路径长度（4），从1到3的最短路径加上3到4的路径长度（15）)</p><p>所以dp[4]最终&#x3D;4。</p><p>f方法是求小公倍数（先求a,b的最大公约数（假设是c）再求最小公倍数a*b&#x2F;c）然后求路径。</p><p>dp[2021]即为所求。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日常练习</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>JAVA</tag>
+      
+      <tag>算法</tag>
+      
+      <tag>蓝桥杯</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>牌型种数（JAVA）</title>
     <link href="/2023/05/07/%E7%89%8C%E5%9E%8B%E7%A7%8D%E6%95%B0%EF%BC%88JAVA%EF%BC%89/"/>
     <url>/2023/05/07/%E7%89%8C%E5%9E%8B%E7%A7%8D%E6%95%B0%EF%BC%88JAVA%EF%BC%89/</url>
