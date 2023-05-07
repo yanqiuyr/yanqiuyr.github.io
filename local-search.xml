@@ -4,6 +4,64 @@
   
   
   <entry>
+    <title>牌型种数（JAVA）</title>
+    <link href="/2023/05/07/%E7%89%8C%E5%9E%8B%E7%A7%8D%E6%95%B0%EF%BC%88JAVA%EF%BC%89/"/>
+    <url>/2023/05/07/%E7%89%8C%E5%9E%8B%E7%A7%8D%E6%95%B0%EF%BC%88JAVA%EF%BC%89/</url>
+    
+    <content type="html"><![CDATA[<h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p> <img src="/img/tupian03.png"></p><h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>    <span class="hljs-keyword">static</span> <span class="hljs-type">int</span> result=<span class="hljs-number">0</span>;                <span class="hljs-comment">//储存结果种数</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        select(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>);<br>        System.out.println(result);<br>    &#125;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">select</span><span class="hljs-params">(<span class="hljs-type">int</span> x,<span class="hljs-type">int</span> y)</span>&#123;   <span class="hljs-comment">//递归</span><br>        <span class="hljs-keyword">if</span> (x&gt;<span class="hljs-number">13</span>||y&gt;<span class="hljs-number">13</span>)&#123;<br>            <span class="hljs-keyword">return</span>;<br>        &#125;<br>        <span class="hljs-keyword">if</span> (x==<span class="hljs-number">13</span>&amp;&amp;y==<span class="hljs-number">13</span>)&#123;<br>            result++;<br>            <span class="hljs-keyword">return</span>;<br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">5</span>;i++)&#123;       <span class="hljs-comment">//0，1，2，3，4，共五种情况</span><br>            select(x+<span class="hljs-number">1</span>,y+i);<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><p>可以拿十三次每次拿一张牌，但每张牌都要有十三种情况拿到所以复杂度是13^13复杂度过高。所以换一种思路</p><p>13种牌每张牌只有四张，所以我们拿十三张牌每种牌的个数可能是0，1，2，3，4张，共五种情况。</p><p>所以我们采取递归思想：</p><p>select(int x,int y);</p><p>x:目前在拿哪张牌（牌型）。</p><p>y:总共拿了多少张牌。</p><p>这样每张牌从十三种情况变为了五种，复杂度变为了5^13,并且如果在中途y&gt;13那么可以直接舍弃这种情况（比如1取了4张，2取了4张，3取了4张，4取了4张总共已经16张牌舍弃），如果取到了第十三种牌型的牌，而且总数正好是13则种数加1。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日常练习</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>JAVA</tag>
+      
+      <tag>算法</tag>
+      
+      <tag>蓝桥杯</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>数位排序（JAVA）</title>
+    <link href="/2023/05/07/%E6%95%B0%E4%BD%8D%E6%8E%92%E5%BA%8F%EF%BC%88JAVA%EF%BC%89/"/>
+    <url>/2023/05/07/%E6%95%B0%E4%BD%8D%E6%8E%92%E5%BA%8F%EF%BC%88JAVA%EF%BC%89/</url>
+    
+    <content type="html"><![CDATA[<h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p>小蓝对一个数的数位之和很感兴趣, 今天他要按照数位之和给数排序。当 两个数各个数位之和不同时, 将数位和较小的排在前面, 当数位之和相等时, 将数值小的排在前面。</p><p>例如, 2022 排在 409 前面, 因为 2022 的数位之和是 6, 小于 409 的数位 之和 13 。</p><p>又如, 6 排在 2022 前面, 因为它们的数位之和相同, 而 6 小于 2022 。</p><p>给定正整数n,m, 请问对 1 到 n 采用这种方法排序时, 排在第 m 个的元 素是多少?</p><p><strong>输入格式</strong><br>输入第一行包含一个正整数 n 。</p><p>第二行包含一个正整数 m 。</p><p><strong>输出格式</strong><br>输出一行包含一个整数, 表示答案。</p><p><strong>样例输入</strong></p><blockquote><p>13<br>5</p></blockquote><p><strong>样例输出</strong></p><blockquote><p>3</p></blockquote><p><strong>样例说明</strong><br>1 到 13 的排序为: 1,10,2,11,3,12,4,13,5,6,7,8,9 。第 5 个数为 3 。</p><p><strong>评测用例规模与约定</strong><br>对于30% 的评测用例,1≤m≤n≤300 。</p><p>对于50% 的评测用例, 1≤m≤n≤1000 。</p><p>对于所有评测用例, 1≤m≤n≤106 。</p><p><strong>运行限制</strong><br>最大运行时间：3s<br>最大运行内存: 512M</p><h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.Arrays;<br><span class="hljs-keyword">import</span> java.util.Scanner;<br> <br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        Scanner sc=<span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br>        <span class="hljs-type">int</span> n,m;                         <br>        n=sc.nextInt();<br>        m=sc.nextInt();<br>        Integer[] arr=<span class="hljs-keyword">new</span> <span class="hljs-title class_">Integer</span>[n];  <span class="hljs-comment">//必须用int的包装类Integer</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++)&#123;<br>            arr[i]=i+<span class="hljs-number">1</span>;<br>        &#125;<br>        Arrays.sort(arr,((o1, o2) -&gt; js(o1)!=js(o2)?js(o1)-js(o2):o1-o2)); <span class="hljs-comment">//Lambda表达式用sort方法进行排序</span><br>        System.out.println(arr[m-<span class="hljs-number">1</span>]);<br>        sc.close();<br> <br>    &#125;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">int</span> <span class="hljs-title function_">js</span><span class="hljs-params">(Integer a)</span>&#123;    <span class="hljs-comment">//求数位和</span><br>        <span class="hljs-type">int</span> sum=<span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">while</span>(a&gt;<span class="hljs-number">0</span>)&#123;<br>            sum+=a%<span class="hljs-number">10</span>;<br>            a=a/<span class="hljs-number">10</span>;<br>        &#125;<br>        <span class="hljs-keyword">return</span> sum;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><p>本题用sort方法中的</p><p>sort(T[] a, Comparator&lt;? super T&gt; c)<br>根据指定的比较器引发的顺序对指定的对象数组进行排序</p><p> 此方法可以根据设置的条件交换元素的顺序，</p><p>Arrays.sort(arr,((o1, o2) -&gt; js(o1)!&#x3D;js(o2)?js(o1)-js(o2):o1-o2));<br>这段代码采用了Lambda表达式意思是比较前后两个数的数位和如果不同，则将数位和较小的放到前面，如果数位和相同则将较小的数字放到前面。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日常练习</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>JAVA</tag>
+      
+      <tag>算法</tag>
+      
+      <tag>蓝桥杯</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>青蛙过河（JAVA）</title>
     <link href="/2023/05/07/%E9%9D%92%E8%9B%99%E8%BF%87%E6%B2%B3%EF%BC%88JAVA%EF%BC%89/"/>
     <url>/2023/05/07/%E9%9D%92%E8%9B%99%E8%BF%87%E6%B2%B3%EF%BC%88JAVA%EF%BC%89/</url>
