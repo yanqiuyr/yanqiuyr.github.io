@@ -4,6 +4,64 @@
   
   
   <entry>
+    <title>青蛙过河（JAVA）</title>
+    <link href="/2023/05/07/%E9%9D%92%E8%9B%99%E8%BF%87%E6%B2%B3%EF%BC%88JAVA%EF%BC%89/"/>
+    <url>/2023/05/07/%E9%9D%92%E8%9B%99%E8%BF%87%E6%B2%B3%EF%BC%88JAVA%EF%BC%89/</url>
+    
+    <content type="html"><![CDATA[<h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p>小青蛙住在一条河边, 它想到河对岸的学校去学习。小青蛙打算经过河里 的石头跳到对岸。</p><p>河里的石头排成了一条直线, 小青蛙每次跳跃必须落在一块石头或者岸上。 不过, 每块石头有一个高度, 每次小青蛙从一块石头起跳, 这块石头的高度就 会下降 1 , 当石头的高度下降到 0 时小青蛙不能再跳到这块石头上（某次跳跃 后使石头高度下降到 0 是允许的)。</p><p>小青蛙一共需要去学校上 x 天课, 所以它需要往返2x 次。当小青蛙具有 一个跳跃能力 y 时, 它能跳不超过 y 的距离。</p><p>请问小青蛙的跳跃能力至少是多少才能用这些石头上完 x 次课。</p><p><strong>输入格式</strong><br>输入的第一行包含两个整数 n,x, 分别表示河的宽度和小青蛙需要去学校 的天数。请注意 2x 才是实际过河的次数。</p><p>第二行包含 n−1 个非负整数H1,H2,⋯,Hn−1, 其中Hi&gt;0 表示在河中与 小青蛙的家相距 i 的地方有一块高度为 Hi 的石头, Hi&#x3D;0 表示这个位置没有石 头。</p><p><strong>输出格式</strong><br>输出一行, 包含一个整数, 表示小青蛙需要的最低跳跃能力。</p><p><strong>样例输入</strong></p><blockquote><p>5 1<br>1 0 1 0</p></blockquote><p><strong>样例输出</strong></p><blockquote><p>4</p></blockquote><p><strong>样例说明</strong><br>由于只有两块高度为 1 的石头，所以往返只能各用一块。第 1 块石头和对岸的距离为 4，如果小青蛙的跳跃能力为 3 则无法满足要求。所以小青蛙最少需要 4 的跳跃能力。</p><p><strong>评测用例规模与约定</strong><br>对于30% 的评测用例, n≤100;</p><p>对于 60% 的评测用例, n≤1000;</p><p>对于所有评测用例, 1≤n≤105,1≤x≤109,1≤Hi≤104 。</p><p><strong>运行限制</strong><br>最大运行时间：1s<br>最大运行内存: 512M</p><h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.Scanner;<br> <br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>    <span class="hljs-keyword">static</span> <span class="hljs-type">int</span> n,x;                  <span class="hljs-comment">//河的宽度和上学的天数</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        Scanner sc=<span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br>        <span class="hljs-type">int</span> sum=<span class="hljs-number">0</span>;<br>        n=sc.nextInt();<br>        x=sc.nextInt();<br>        <span class="hljs-type">int</span>[] H=<span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[n];          <span class="hljs-comment">//储存石头的位置以及高度</span><br>        <span class="hljs-type">int</span>[] b=<span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[n];          <span class="hljs-comment">//储存每块石头之前可以跳跃的次数</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;n;i++)&#123;<br>            H[i]=sc.nextInt();<br>            sum+=H[i];<br>            b[i]=sum;<br>        &#125;<br>        <span class="hljs-type">int</span> left=<span class="hljs-number">1</span>,right=n,middle,S=<span class="hljs-number">0</span>;  <span class="hljs-comment">//二分法查找最小跳跃距离</span><br>        <span class="hljs-keyword">while</span>(left&lt;=right)&#123;<br>            middle=left+right&gt;&gt;<span class="hljs-number">1</span>;       <span class="hljs-comment">//&gt;&gt;是位运算符X+Y&gt;&gt;1相当于(X+Y)/2</span><br>            <span class="hljs-keyword">if</span> (check(middle,b))&#123;<br>                S=middle;<br> <br>                right=middle-<span class="hljs-number">1</span>;<br> <br>            &#125;<span class="hljs-keyword">else</span> &#123;<br>                left=middle+<span class="hljs-number">1</span>;<br> <br>            &#125;<br> <br>        &#125;<br>        System.out.println(S);<br>        sc.close();<br>    &#125;<br> <br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">check</span><span class="hljs-params">(<span class="hljs-type">int</span> middle, <span class="hljs-type">int</span>[] b)</span> &#123;   <span class="hljs-comment">//查b集合的每个区间是否都有至少2*x个落脚点。</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i+middle&lt;=n;i++)&#123;<br>            <span class="hljs-keyword">if</span> (b[i+middle-<span class="hljs-number">1</span>]-b[i-<span class="hljs-number">1</span>]&lt;<span class="hljs-number">2</span>*x)&#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><p>这道题用了二分法的查找方法。</p><p>1.我们先进行一个转换，1只小青蛙去x天学校总共需要往返2<em>x次，转化为2</em>x只小青蛙过一次河。</p><p>2.我们将每块石头及之前石头可以跳跃的次数储存起来，以题目中给的例子为例，b[1]&#x3D;1,b[2]&#x3D;1,b[3]&#x3D;2,b[4]&#x3D;2。</p><p>3.采用二分法找最少跳跃距离，再一次次将midder（跳跃距离）在b集合的区间里找是否所有的区间都可以满足至少有2<em>x个落脚点（每次青蛙跳离一块石头后，之后的距离区间都要保证有2</em>x个落脚点，否则就会有青蛙跳不过去，所以要将所有区间都进行比较），如果可以先将midder储存起来（因为可能有更小的跳跃距离），再用二分法逐步比较，直到二分结束输出最终的最小跳跃距离。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日常练习</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>JAVA</tag>
+      
+      <tag>算法</tag>
+      
+      <tag>蓝桥杯</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>求和（JAVA）</title>
+    <link href="/2023/05/07/%E6%B1%82%E5%92%8C%EF%BC%88JAVA%EF%BC%89/"/>
+    <url>/2023/05/07/%E6%B1%82%E5%92%8C%EF%BC%88JAVA%EF%BC%89/</url>
+    
+    <content type="html"><![CDATA[<h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p>给定 n 个整数 a1,a2,⋅⋅⋅,an ，求它们两两相乘再相加的和，即：</p><p>S&#x3D;a1⋅a2+a1⋅a3+⋯+a1⋅an+a2⋅a3+⋯+an−2⋅an−1+an−2⋅an+an−1⋅an</p><p><strong>输入格式</strong><br>输入的第一行包含一个整数 n。</p><p>第二行包含 n 个整数a1,a2,⋯,an。</p><p><strong>输出格式</strong><br>输出一个整数 S，表示所求的和。请使用合适的数据类型进行运算。</p><p><strong>样例输入</strong></p><blockquote><p>4<br>1 3 6 9</p></blockquote><p><strong>样例输出</strong></p><blockquote><p>117</p></blockquote><p><strong>评测用例规模与约定</strong><br>对于 30 %30% 的数据，1≤n≤1000,1≤ai≤100 。</p><p>对于所有评测用例， 1≤n≤200000,1≤ai≤1000 。</p><p><strong>运行限制</strong><br>最大运行时间：1s<br>最大运行内存: 512M</p><h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.Scanner;<br> <br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        Scanner sc=<span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br>        <span class="hljs-type">int</span> N;<br>        <span class="hljs-type">long</span> sum=<span class="hljs-number">0</span>,S=<span class="hljs-number">0</span>;                    <span class="hljs-comment">//sum储存数组中所有元素和，S储存最终结果。</span><br>        N=sc.nextInt();<br>        <span class="hljs-type">int</span>[] arr=<span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[N];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;N;i++)&#123;<br>            arr[i]=sc.nextInt();<br>            sum+=arr[i];<br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; N; i++) &#123;<br>            S+=arr[i]*(sum-arr[i]);<br>            sum-=arr[i];<br>            &#125;<br>        System.out.println(S);<br>            sc.close();<br>        &#125;<br>    &#125;<br></code></pre></td></tr></table></figure><h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><p>看到题目我第一个想到的就是暴力解法，但1&lt;&#x3D;n&lt;&#x3D;200000,暴力解法肯定超时，所以我们要做一下优化。</p><p>题目给的试子还可以把a1到an-1提出来变成</p><p>a1*(a2+a3+……+an)+a2*(a3+a4+……+an)+…+an-1*an</p><p>我们发现提出来后括号中的试子都可以通过sum（所有数的和）减去之前的数得到。所以我们可以通过一个for循环解题。</p><p> for (int i &#x3D; 0; i &lt; N; i++) {<br>            S+&#x3D;arr[i]*(sum-arr[i]);<br>            sum-&#x3D;arr[i];<br>            }</p><p><strong>注：此代码提交后有时是100%通过有时不是，看其它题解也有人反应此问题，看其它题解思路都是相同的，代码应该没问题，应该是系统问题。</strong></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日常练习</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>JAVA</tag>
+      
+      <tag>算法</tag>
+      
+      <tag>蓝桥杯</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>猜字母（JAVA）</title>
     <link href="/2023/05/07/%E7%8C%9C%E5%AD%97%E6%AF%8D%EF%BC%88JAVA%EF%BC%89/"/>
     <url>/2023/05/07/%E7%8C%9C%E5%AD%97%E6%AF%8D%EF%BC%88JAVA%EF%BC%89/</url>

@@ -16,26 +16,26 @@
   <meta name="author" content="晏萩">
   <meta name="keywords" content="">
   
-    <meta name="description" content="题目：本题为填空题，只需要算出结果后，在代码中使用输出语句将所填结果输出即可。 把 abcd…s 共19个字母组成的序列重复拼接 106 次，得到长度为 2014 的串。 接下来删除第 1 个字母（即开头的字母 a），以及第 3 个，第 5 个等所有奇数位置的字母。 得到的新字符串再进行删除奇数位置字母的动作。如此下去，最后只剩下一个字母，请输出该字母。 运行限制最大运行时间：1s最大运行内存:">
+    <meta name="description" content="题目：给定 n 个整数 a1,a2,⋅⋅⋅,an ，求它们两两相乘再相加的和，即： S&#x3D;a1⋅a2+a1⋅a3+⋯+a1⋅an+a2⋅a3+⋯+an−2⋅an−1+an−2⋅an+an−1⋅an 输入格式输入的第一行包含一个整数 n。 第二行包含 n 个整数a1,a2,⋯,an。 输出格式输出一个整数 S，表示所求的和。请使用合适的数据类型进行运算。 样例输入  41 3 6 9  样例">
 <meta property="og:type" content="article">
-<meta property="og:title" content="猜字母（JAVA）">
-<meta property="og:url" content="http://example.com/2023/05/07/%E7%8C%9C%E5%AD%97%E6%AF%8D%EF%BC%88JAVA%EF%BC%89/index.html">
+<meta property="og:title" content="求和（JAVA）">
+<meta property="og:url" content="http://example.com/2023/05/07/%E6%B1%82%E5%92%8C%EF%BC%88JAVA%EF%BC%89/index.html">
 <meta property="og:site_name" content="晏萩の博客">
-<meta property="og:description" content="题目：本题为填空题，只需要算出结果后，在代码中使用输出语句将所填结果输出即可。 把 abcd…s 共19个字母组成的序列重复拼接 106 次，得到长度为 2014 的串。 接下来删除第 1 个字母（即开头的字母 a），以及第 3 个，第 5 个等所有奇数位置的字母。 得到的新字符串再进行删除奇数位置字母的动作。如此下去，最后只剩下一个字母，请输出该字母。 运行限制最大运行时间：1s最大运行内存:">
+<meta property="og:description" content="题目：给定 n 个整数 a1,a2,⋅⋅⋅,an ，求它们两两相乘再相加的和，即： S&#x3D;a1⋅a2+a1⋅a3+⋯+a1⋅an+a2⋅a3+⋯+an−2⋅an−1+an−2⋅an+an−1⋅an 输入格式输入的第一行包含一个整数 n。 第二行包含 n 个整数a1,a2,⋯,an。 输出格式输出一个整数 S，表示所求的和。请使用合适的数据类型进行运算。 样例输入  41 3 6 9  样例">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/img/dm11.jpg">
-<meta property="article:published_time" content="2023-05-07T04:04:47.000Z">
-<meta property="article:modified_time" content="2023-05-07T04:07:24.491Z">
+<meta property="og:image" content="http://example.com/img/dm12.jpg">
+<meta property="article:published_time" content="2023-05-07T04:13:50.000Z">
+<meta property="article:modified_time" content="2023-05-07T04:16:33.753Z">
 <meta property="article:author" content="晏萩">
 <meta property="article:tag" content="JAVA">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="蓝桥杯">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/img/dm11.jpg">
+<meta name="twitter:image" content="http://example.com/img/dm12.jpg">
   
   
   
-  <title>猜字母（JAVA） - 晏萩の博客</title>
+  <title>求和（JAVA） - 晏萩の博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -231,7 +231,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="猜字母（JAVA）"></span>
+            <span id="subtitle" data-typed-text="求和（JAVA）"></span>
           
         </div>
 
@@ -242,7 +242,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-05-07 12:04" pubdate>
+        <time datetime="2023-05-07 12:13" pubdate>
           2023年5月7日 中午
         </time>
       </span>
@@ -254,7 +254,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          839 字
+          1k 字
         
       </span>
     
@@ -265,7 +265,7 @@
         
         
         
-          7 分钟
+          9 分钟
         
       </span>
     
@@ -307,26 +307,35 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">猜字母（JAVA）</h1>
+            <h1 style="display: none">求和（JAVA）</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p><strong>本题为填空题，只需要算出结果后，在代码中使用输出语句将所填结果输出即可。</strong></p>
-<p>把 abcd…s 共19个字母组成的序列重复拼接 106 次，得到长度为 2014 的串。</p>
-<p>接下来删除第 1 个字母（即开头的字母 a），以及第 3 个，第 5 个等所有奇数位置的字母。</p>
-<p>得到的新字符串再进行删除奇数位置字母的动作。如此下去，最后只剩下一个字母，请输出该字母。</p>
-<p><strong>运行限制</strong><br>最大运行时间：1s<br>最大运行内存: 128M</p>
-<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">int</span> x=<span class="hljs-number">0</span>;<br>        <span class="hljs-type">char</span>[] arr=<span class="hljs-keyword">new</span> <span class="hljs-title class_">char</span>[<span class="hljs-number">2014</span>];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">106</span>;i++)&#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j=<span class="hljs-number">0</span>;j&lt;<span class="hljs-number">19</span>;j++)&#123;<br>                arr[x++]=(<span class="hljs-type">char</span>)(<span class="hljs-string">&#x27;a&#x27;</span>+j);<br>            &#125;<br>        &#125;<br>        <span class="hljs-type">int</span> length=<span class="hljs-number">2014</span>;<br>        <span class="hljs-keyword">while</span>(length!=<span class="hljs-number">1</span>)&#123;<br>            <span class="hljs-type">int</span> y=<span class="hljs-number">0</span>;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;length;i+=<span class="hljs-number">2</span>)&#123;<br>                arr[y++]=arr[i];<br>            &#125;<br>            length=y;<br>        &#125;<br>        System.out.println(arr[<span class="hljs-number">0</span>]);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+                <h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p>给定 n 个整数 a1,a2,⋅⋅⋅,an ，求它们两两相乘再相加的和，即：</p>
+<p>S&#x3D;a1⋅a2+a1⋅a3+⋯+a1⋅an+a2⋅a3+⋯+an−2⋅an−1+an−2⋅an+an−1⋅an</p>
+<p><strong>输入格式</strong><br>输入的第一行包含一个整数 n。</p>
+<p>第二行包含 n 个整数a1,a2,⋯,an。</p>
+<p><strong>输出格式</strong><br>输出一个整数 S，表示所求的和。请使用合适的数据类型进行运算。</p>
+<p><strong>样例输入</strong></p>
+<blockquote>
+<p>4<br>1 3 6 9</p>
+</blockquote>
+<p><strong>样例输出</strong></p>
+<blockquote>
+<p>117</p>
+</blockquote>
+<p><strong>评测用例规模与约定</strong><br>对于 30 %30% 的数据，1≤n≤1000,1≤ai≤100 。</p>
+<p>对于所有评测用例， 1≤n≤200000,1≤ai≤1000 。</p>
+<p><strong>运行限制</strong><br>最大运行时间：1s<br>最大运行内存: 512M</p>
+<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.Scanner;<br> <br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        Scanner sc=<span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br>        <span class="hljs-type">int</span> N;<br>        <span class="hljs-type">long</span> sum=<span class="hljs-number">0</span>,S=<span class="hljs-number">0</span>;                    <span class="hljs-comment">//sum储存数组中所有元素和，S储存最终结果。</span><br>        N=sc.nextInt();<br>        <span class="hljs-type">int</span>[] arr=<span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[N];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;N;i++)&#123;<br>            arr[i]=sc.nextInt();<br>            sum+=arr[i];<br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; N; i++) &#123;<br>            S+=arr[i]*(sum-arr[i]);<br>            sum-=arr[i];<br>            &#125;<br>        System.out.println(S);<br>            sc.close();<br>        &#125;<br>    &#125;<br></code></pre></td></tr></table></figure>
 
-<h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><p>将2014个字母组成的字符串储存在一个char类型的数组中，既然要删除奇数位的字母再重新组成新的字符串，那么我们就将偶数位的字母拿出来往前提放到数组之前，y为所有偶数位字母组成的新字符串的长度，当长度为1时输出数组中第一个字母即可。</p>
-<p><strong>例：</strong>初始字符串：abcdefghijklmnopqrs</p>
-<p>第一轮：bdfhjlnpr jklmnopqrs</p>
-<p>第二轮：dhlp jlnprjklmnopqrs</p>
-<p>第三轮：hp lpjlnprjklmnopqrs</p>
-<p>第四轮：p plpjlnprjklmnopqrs</p>
-<p>此时新组成的字符串长度为一结束</p>
-<p>输出arr[0]&#x3D;p；</p>
+<h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><p>看到题目我第一个想到的就是暴力解法，但1&lt;&#x3D;n&lt;&#x3D;200000,暴力解法肯定超时，所以我们要做一下优化。</p>
+<p>题目给的试子还可以把a1到an-1提出来变成</p>
+<p>a1*(a2+a3+……+an)+a2*(a3+a4+……+an)+…+an-1*an</p>
+<p>我们发现提出来后括号中的试子都可以通过sum（所有数的和）减去之前的数得到。所以我们可以通过一个for循环解题。</p>
+<p> for (int i &#x3D; 0; i &lt; N; i++) {<br>            S+&#x3D;arr[i]*(sum-arr[i]);<br>            sum-&#x3D;arr[i];<br>            }</p>
+<p><strong>注：此代码提交后有时是100%通过有时不是，看其它题解也有人反应此问题，看其它题解思路都是相同的，代码应该没问题，应该是系统问题。</strong></p>
 
                 
               </div>
@@ -376,8 +385,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>猜字母（JAVA）</div>
-      <div>http://example.com/2023/05/07/猜字母（JAVA）/</div>
+      <div>求和（JAVA）</div>
+      <div>http://example.com/2023/05/07/求和（JAVA）/</div>
     </div>
     <div class="license-meta">
       
@@ -421,9 +430,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/05/07/%E6%B1%82%E5%92%8C%EF%BC%88JAVA%EF%BC%89/" title="求和（JAVA）">
+                      <a href="/2023/05/07/%E9%9D%92%E8%9B%99%E8%BF%87%E6%B2%B3%EF%BC%88JAVA%EF%BC%89/" title="青蛙过河（JAVA）">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">求和（JAVA）</span>
+                        <span class="hidden-mobile">青蛙过河（JAVA）</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -431,8 +440,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/05/07/%E5%9B%9B%E5%B9%B3%E6%96%B9%E5%92%8C%EF%BC%88JAVA%EF%BC%89/" title="四平方和（JAVA）">
-                        <span class="hidden-mobile">四平方和（JAVA）</span>
+                      <a href="/2023/05/07/%E7%8C%9C%E5%AD%97%E6%AF%8D%EF%BC%88JAVA%EF%BC%89/" title="猜字母（JAVA）">
+                        <span class="hidden-mobile">猜字母（JAVA）</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
