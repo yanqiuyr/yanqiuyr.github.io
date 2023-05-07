@@ -4,6 +4,64 @@
   
   
   <entry>
+    <title>猜字母（JAVA）</title>
+    <link href="/2023/05/07/%E7%8C%9C%E5%AD%97%E6%AF%8D%EF%BC%88JAVA%EF%BC%89/"/>
+    <url>/2023/05/07/%E7%8C%9C%E5%AD%97%E6%AF%8D%EF%BC%88JAVA%EF%BC%89/</url>
+    
+    <content type="html"><![CDATA[<h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p><strong>本题为填空题，只需要算出结果后，在代码中使用输出语句将所填结果输出即可。</strong></p><p>把 abcd…s 共19个字母组成的序列重复拼接 106 次，得到长度为 2014 的串。</p><p>接下来删除第 1 个字母（即开头的字母 a），以及第 3 个，第 5 个等所有奇数位置的字母。</p><p>得到的新字符串再进行删除奇数位置字母的动作。如此下去，最后只剩下一个字母，请输出该字母。</p><p><strong>运行限制</strong><br>最大运行时间：1s<br>最大运行内存: 128M</p><h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">int</span> x=<span class="hljs-number">0</span>;<br>        <span class="hljs-type">char</span>[] arr=<span class="hljs-keyword">new</span> <span class="hljs-title class_">char</span>[<span class="hljs-number">2014</span>];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">106</span>;i++)&#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j=<span class="hljs-number">0</span>;j&lt;<span class="hljs-number">19</span>;j++)&#123;<br>                arr[x++]=(<span class="hljs-type">char</span>)(<span class="hljs-string">&#x27;a&#x27;</span>+j);<br>            &#125;<br>        &#125;<br>        <span class="hljs-type">int</span> length=<span class="hljs-number">2014</span>;<br>        <span class="hljs-keyword">while</span>(length!=<span class="hljs-number">1</span>)&#123;<br>            <span class="hljs-type">int</span> y=<span class="hljs-number">0</span>;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;length;i+=<span class="hljs-number">2</span>)&#123;<br>                arr[y++]=arr[i];<br>            &#125;<br>            length=y;<br>        &#125;<br>        System.out.println(arr[<span class="hljs-number">0</span>]);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><p>将2014个字母组成的字符串储存在一个char类型的数组中，既然要删除奇数位的字母再重新组成新的字符串，那么我们就将偶数位的字母拿出来往前提放到数组之前，y为所有偶数位字母组成的新字符串的长度，当长度为1时输出数组中第一个字母即可。</p><p><strong>例：</strong>初始字符串：abcdefghijklmnopqrs</p><p>第一轮：bdfhjlnpr jklmnopqrs</p><p>第二轮：dhlp jlnprjklmnopqrs</p><p>第三轮：hp lpjlnprjklmnopqrs</p><p>第四轮：p plpjlnprjklmnopqrs</p><p>此时新组成的字符串长度为一结束</p><p>输出arr[0]&#x3D;p；</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日常练习</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>JAVA</tag>
+      
+      <tag>算法</tag>
+      
+      <tag>蓝桥杯</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>四平方和（JAVA）</title>
+    <link href="/2023/05/07/%E5%9B%9B%E5%B9%B3%E6%96%B9%E5%92%8C%EF%BC%88JAVA%EF%BC%89/"/>
+    <url>/2023/05/07/%E5%9B%9B%E5%B9%B3%E6%96%B9%E5%92%8C%EF%BC%88JAVA%EF%BC%89/</url>
+    
+    <content type="html"><![CDATA[<h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p>四平方和定理，又称为拉格朗日定理：</p><p>每个正整数都可以表示为至多 4 个正整数的平方和。</p><p>如果把 0 包括进去，就正好可以表示为 4 个数的平方和。</p><p>比如：</p><p>5 &#x3D; 0^2 + 0^2 + 1^2 + 2^25；</p><p>7 &#x3D; 1^2 + 1^2 + 1^2 + 2^27；</p><p>对于一个给定的正整数，可能存在多种平方和的表示法。</p><p>要求你对 4 个数排序：</p><p>0≤a≤b≤c≤d</p><p>并对所有的可能表示法按 a,b,c,d 为联合主键升序排列，最后输出第一个表示法。</p><p><strong>输入描述</strong><br>程序输入为一个正整数 N(N&lt;5×10^6)。</p><p><strong>输出描述</strong><br>要求输出 4 个非负整数，按从小到大排序，中间用空格分开</p><p><strong>输入输出样例</strong><br>示例</p><p><strong>输入</strong></p><blockquote><p>12</p></blockquote><p>输出</p><blockquote><p>0 2 2 2</p></blockquote><p><strong>运行限制</strong><br>最大运行时间：3s<br>最大运行内存: 256M</p><h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs java"> <br><span class="hljs-keyword">import</span> java.util.HashMap;<br><span class="hljs-keyword">import</span> java.util.Map;<br><span class="hljs-keyword">import</span> java.util.Scanner;<br> <br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        Scanner sc=<span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br>        Map&lt;Integer,Integer&gt; cache=<span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>&lt;Integer, Integer&gt;();<br>        <span class="hljs-type">int</span> N;<br>        N=sc.nextInt();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> c=<span class="hljs-number">0</span>;c*c&lt;=N/<span class="hljs-number">2</span>;c++)&#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> d=c;c*c+d*d&lt;=N;d++)&#123;<br>                <span class="hljs-keyword">if</span> (cache.get(c*c+d*d)==<span class="hljs-literal">null</span>)&#123;<br>                    cache.put(c*c+d*d,c);<br>                &#125;<br>            &#125;<br>        &#125;                                        <span class="hljs-comment">//对c，d进行遍历并存储</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> a=<span class="hljs-number">0</span>;a*a&lt;=N/<span class="hljs-number">4</span>;a++)&#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> b=a;a*a+b*b&lt;=N/<span class="hljs-number">3</span>;b++)&#123;<br>                <span class="hljs-keyword">if</span> (cache.get(N-a*a-b*b)!=<span class="hljs-literal">null</span>)&#123;<br>                    <span class="hljs-type">int</span> c=cache.get(N-a*a-b*b);<br>                    <span class="hljs-type">int</span> d=(<span class="hljs-type">int</span>)Math.sqrt(N-a*a-b*b-c*c);<br>                    System.out.print(a+<span class="hljs-string">&quot; &quot;</span>+b+<span class="hljs-string">&quot; &quot;</span>+c+<span class="hljs-string">&quot; &quot;</span>+d);<br>                    <span class="hljs-keyword">return</span>;<br>                &#125;<br>            &#125;<br>        &#125;                                       <span class="hljs-comment">//对a，b进行遍历并找到符合要求的a，b，c，d进行输出。</span><br> <br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><p>看到题目首先想到的是暴力解法，a,b,c,d全部遍历一遍，因为0≤a≤b≤c≤d所以a&lt;&#x3D;N&#x2F;4,b&lt;&#x3D;N&#x2F;3,c&lt;&#x3D;N&#x2F;2,d&lt;&#x3D;N。但大约估计计算量为10^12必定会超时，所以我们需要优化算法。</p><p>我们将c,d和a,b分开来求，并将c，d得到的结果存储到Hashmap集合中，再去遍历a,b从map集合中寻找符合条件的值，这样就大大降低了计算量大约为10^6。</p><p><strong>并对所有的可能表示法按 a,b,c,d 为联合主键升序排列，最后输出第一个表示法。</strong></p><p>这句话其实就是让我们输出第一个找到的组合，再找到第一个组合后，进行输出直接停止就可以了。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日常练习</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>JAVA</tag>
+      
+      <tag>算法</tag>
+      
+      <tag>蓝桥杯</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>取球博弈（JAVA）</title>
     <link href="/2023/05/05/%E5%8F%96%E7%90%83%E5%8D%9A%E5%BC%88%EF%BC%88JAVA%EF%BC%89/"/>
     <url>/2023/05/05/%E5%8F%96%E7%90%83%E5%8D%9A%E5%BC%88%EF%BC%88JAVA%EF%BC%89/</url>
