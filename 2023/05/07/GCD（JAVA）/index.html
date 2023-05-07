@@ -16,26 +16,26 @@
   <meta name="author" content="晏萩">
   <meta name="keywords" content="">
   
-    <meta name="description" content="题目：满足 N ! 的末尾恰好有 K 个 0 的最小的 N 是多少? 如果这样的 N 不存在输出 −1 。 输入格式一个整数 K 。 输出格式一个整数代表答案。 样例输入  2  样例输出  10  评测用例规模与约定对于 30% 的数据, 1≤K≤106. 对于 100% 的数据, 1≤K≤1018. 运行限制最大运行时间：3s最大运行内存: 512M 代码：123456789101112131">
+    <meta name="description" content="题目：给定两个不同的正整数 a,b, 求一个正整数 k 使得 gcd(a+k,b+k) 尽可能 大, 其中 gcd(a,b) 表示 aa 和 bb 的最大公约数, 如果存在多个 k, 请输出所有满 足条件的 k 中最小的那个。 输入格式输入一行包含两个正整数 a,b, 用一个空格分隔。 输出格式输出一行包含一个正整数 k 。 样例输入5 7 样例输出1 评测用例规模与约定对于 20% 的评测用例，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="求阶乘（JAVA）">
-<meta property="og:url" content="http://example.com/2023/05/07/%E6%B1%82%E9%98%B6%E4%B9%98%EF%BC%88JAVA%EF%BC%89/index.html">
+<meta property="og:title" content="GCD（JAVA）">
+<meta property="og:url" content="http://example.com/2023/05/07/GCD%EF%BC%88JAVA%EF%BC%89/index.html">
 <meta property="og:site_name" content="晏萩の博客">
-<meta property="og:description" content="题目：满足 N ! 的末尾恰好有 K 个 0 的最小的 N 是多少? 如果这样的 N 不存在输出 −1 。 输入格式一个整数 K 。 输出格式一个整数代表答案。 样例输入  2  样例输出  10  评测用例规模与约定对于 30% 的数据, 1≤K≤106. 对于 100% 的数据, 1≤K≤1018. 运行限制最大运行时间：3s最大运行内存: 512M 代码：123456789101112131">
+<meta property="og:description" content="题目：给定两个不同的正整数 a,b, 求一个正整数 k 使得 gcd(a+k,b+k) 尽可能 大, 其中 gcd(a,b) 表示 aa 和 bb 的最大公约数, 如果存在多个 k, 请输出所有满 足条件的 k 中最小的那个。 输入格式输入一行包含两个正整数 a,b, 用一个空格分隔。 输出格式输出一行包含一个正整数 k 。 样例输入5 7 样例输出1 评测用例规模与约定对于 20% 的评测用例，">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/img/dm12.jpg">
-<meta property="article:published_time" content="2023-05-07T04:58:51.000Z">
-<meta property="article:modified_time" content="2023-05-07T05:00:52.479Z">
+<meta property="og:image" content="http://example.com/img/dm11.jpg">
+<meta property="article:published_time" content="2023-05-07T05:06:27.000Z">
+<meta property="article:modified_time" content="2023-05-07T05:09:52.198Z">
 <meta property="article:author" content="晏萩">
 <meta property="article:tag" content="JAVA">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="蓝桥杯">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/img/dm12.jpg">
+<meta name="twitter:image" content="http://example.com/img/dm11.jpg">
   
   
   
-  <title>求阶乘（JAVA） - 晏萩の博客</title>
+  <title>GCD（JAVA） - 晏萩の博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -231,7 +231,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="求阶乘（JAVA）"></span>
+            <span id="subtitle" data-typed-text="GCD（JAVA）"></span>
           
         </div>
 
@@ -242,7 +242,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-05-07 12:58" pubdate>
+        <time datetime="2023-05-07 13:06" pubdate>
           2023年5月7日 下午
         </time>
       </span>
@@ -254,7 +254,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.8k 字
+          769 字
         
       </span>
     
@@ -265,7 +265,7 @@
         
         
         
-          15 分钟
+          7 分钟
         
       </span>
     
@@ -307,42 +307,25 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">求阶乘（JAVA）</h1>
+            <h1 style="display: none">GCD（JAVA）</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p>满足 N ! 的末尾恰好有 K 个 0 的最小的 N 是多少?</p>
-<p>如果这样的 N 不存在输出 −1 。</p>
-<p><strong>输入格式</strong><br>一个整数 K 。</p>
-<p><strong>输出格式</strong><br>一个整数代表答案。</p>
-<p><strong>样例输入</strong></p>
-<blockquote>
-<p>2</p>
-</blockquote>
-<p><strong>样例输出</strong></p>
-<blockquote>
-<p>10</p>
-</blockquote>
-<p><strong>评测用例规模与约定</strong><br>对于 30% 的数据, 1≤K≤106.</p>
-<p>对于 100% 的数据, 1≤K≤1018.</p>
-<p><strong>运行限制</strong><br>最大运行时间：3s<br>最大运行内存: 512M</p>
-<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.Scanner;<br><span class="hljs-comment">// 1:无需package</span><br><span class="hljs-comment">// 2: 类名必须Main, 不可修改</span><br> <br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>   <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        Scanner sc=<span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br>        <span class="hljs-type">long</span> K=sc.nextLong();               <span class="hljs-comment">//输入K</span><br>        <span class="hljs-type">long</span> left=<span class="hljs-number">1</span>;                        <span class="hljs-comment">//左边界</span><br>        <span class="hljs-type">long</span> right=Long.MAX_VALUE-<span class="hljs-number">1</span>;         <span class="hljs-comment">//右边界</span><br>        <span class="hljs-keyword">while</span>(left&lt;right)&#123;                   <span class="hljs-comment">//二分法查找，因为要找最小值所以要令其不符合条件时自动退出循环，不能使用break语句停止。left（左边界）right（右边界）</span><br>            <span class="hljs-type">long</span> mid=(left+right)/<span class="hljs-number">2</span>;<br>            <span class="hljs-keyword">if</span> (f(mid)&lt;K)&#123;<br>                left=mid+<span class="hljs-number">1</span>;<br>            &#125;<br>            <span class="hljs-keyword">if</span> (f(mid)&gt;=K)&#123;<br>                right=mid;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">if</span> (f(right)==K)&#123;               <span class="hljs-comment">//符合条件输出值，不符合条件输出-1</span><br>            System.out.println(right);<br>        &#125;<span class="hljs-keyword">else</span> &#123;<br>            System.out.println(<span class="hljs-string">&quot;-1&quot;</span>);<br>        &#125;<br>        sc.close();<br> <br>    &#125;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">long</span> <span class="hljs-title function_">f</span><span class="hljs-params">(<span class="hljs-type">long</span> a)</span>&#123;    <span class="hljs-comment">//看有几个五来确定末尾有几个零</span><br>        <span class="hljs-type">long</span> sum=<span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">while</span>(a&gt;<span class="hljs-number">0</span>)&#123;<br>            sum+=a/<span class="hljs-number">5</span>;<br>            a=a/<span class="hljs-number">5</span>;<br>        &#125;<br>        <span class="hljs-keyword">return</span> sum;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+                <h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p>给定两个不同的正整数 a,b, 求一个正整数 k 使得 gcd(a+k,b+k) 尽可能 大, 其中 gcd(a,b) 表示 aa 和 bb 的最大公约数, 如果存在多个 k, 请输出所有满 足条件的 k 中最小的那个。</p>
+<p><strong>输入格式</strong><br>输入一行包含两个正整数 a,b, 用一个空格分隔。</p>
+<p><strong>输出格式</strong><br>输出一行包含一个正整数 k 。</p>
+<p><strong>样例输入</strong><br>5 7</p>
+<p><strong>样例输出</strong><br>1</p>
+<p><strong>评测用例规模与约定</strong><br>对于 20% 的评测用例，a&lt;b≤105;</p>
+<p>对于 40% 的评测用例, a&lt;b≤109;</p>
+<p>对于所有评测用例, 1≤a&lt;b≤1018 。</p>
+<p><strong>运行限制</strong><br>最大运行时间：1s<br>最大运行内存: 512M</p>
+<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.Scanner;<br><span class="hljs-comment">// 1:无需package</span><br><span class="hljs-comment">// 2: 类名必须Main, 不可修改</span><br> <br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>  <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        Scanner sc=<span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br>        <span class="hljs-type">long</span> a,b;<br>        a=sc.nextLong();<br>        b=sc.nextLong();<br>        <span class="hljs-type">long</span> c,k;<br>        <span class="hljs-keyword">if</span> (a&gt;b)&#123;<br>            c=a-b;<br>        &#125;<br>        <span class="hljs-keyword">else</span> &#123;<br>            c=b-a;<br>        &#125;<br>        k=c-a%c;<br>        System.out.println(k);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><p>看到题目我觉得这道题应该是找规律的（K的取值那么大总不可能是暴力输出吧（doge）），然后发现5的时候末尾有一个0，10的时候末尾有两个0，15的时候末尾有三个0。</p>
-<p>那么这题的规律就来了。</p>
-<p>一个数的阶乘末尾如果想有0，那么就要乘10，而2<em>5&#x3D;10（剩下的7个数相乘凑不出来10），所以我们就需要找有几个2</em>5，因为2比5小所以在一个数的阶乘中，包含2的个数一定比5的个数多，所以转换成我们需要求5的个数。下面举几个例子帮助大家理解</p>
-<p>5！&#x3D;1<em>2</em>3<em>4</em>5   其中有5&#x2F;5&#x3D;1个5。</p>
-<p>10！&#x3D;1<em>2</em>3*……<em>9</em>10     其中有10&#x2F;5&#x3D;2个5。</p>
-<p>13！&#x3D;1<em>2</em>3*…..<em>12</em>13     其中有13&#x2F;5&#x3D;2个5。</p>
-<p>25！&#x3D;1<em>2</em>3*….<em>24</em>25   其中有25&#x2F;5&#x3D;5个5（等等好像不对）25！中应该有6个5吧我们来数一下，5&#x3D;1<em>5，10&#x3D;2</em>5，15&#x3D;3<em>5，20&#x3D;4</em>5，25&#x3D;5*5。25可以分解为两个5，相应的125可以分解成3个5相乘，所以我们要用循环将其除尽才能得出正确的5的个数。</p>
-<p>好规律找到了（阶乘末尾有几个0取决于该数可以分解出几个5），我们就需要进行查找了，这里我们选择使用二分法（因为快）。</p>
-<p>使用二分法就需要找左右边界，左边界很好找就是1，右边界呢？</p>
-<p>因为</p>
-<p>Long.MAX_VALUE的阶乘后边有   2305843009213693937个0(10的19次方) &gt; k<br>Long.MAX_VALUE&#x2F;2的阶乘后边有 1152921504606846964个0(10的19次方) &gt; k<br>（其它博主的文章里复制的）<br>这里给上原文链接：<a target="_blank" rel="noopener" href="http://t.csdn.cn/rDIsy">http://t.csdn.cn/rDIsy</a></p>
-<p>所以右边界我们就用Long.MAX_VALUE为了防止在二分时相加越界，所以右边界用Long.MAX_VALUE-1（减几都可以（也不能减太多（doge）））。</p>
-<p>至此我们通过找规律和二分查找成功解决问题。</p>
-<p>注：其实一开始我也只是意识到有规律并没有准确找到，这道题是看过题解后才写出来的，还是差太多了，一起加油吧各位。</p>
+<h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><p>最大公约数因为a,b两数不相等，要加上一个相同的数k则可以求出的最大公约数必为a，b两数的差（代码也可以写成差的绝对值，我是进行比较了）。举个例子，5，7。</p>
+<p>5和7加上同一个数因为他们的差值是2假设加上k后最大公约数可能为3，5+4&#x3D;9，那么7就要加到12需要加5，就不满足条件了。</p>
+<p>公约数我们求出来了就是差值，求最小k只需要用最大公约数减去a,b任意一个数除以最大公约数的余数即可。</p>
 
                 
               </div>
@@ -392,8 +375,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>求阶乘（JAVA）</div>
-      <div>http://example.com/2023/05/07/求阶乘（JAVA）/</div>
+      <div>GCD（JAVA）</div>
+      <div>http://example.com/2023/05/07/GCD（JAVA）/</div>
     </div>
     <div class="license-meta">
       
@@ -437,18 +420,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/05/07/%E6%95%B0%E7%BB%84%E5%88%87%E5%88%86%EF%BC%88JAVA%EF%BC%89/" title="数组切分（JAVA）">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">数组切分（JAVA）</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/05/07/%E6%9C%80%E5%B0%91%E5%88%B7%E9%A2%98%E6%95%B0%EF%BC%88JAVA%EF%BC%89/" title="最少刷题数（JAVA）">
-                        <span class="hidden-mobile">最少刷题数（JAVA）</span>
+                      <a href="/2023/05/07/%E6%95%B0%E7%BB%84%E5%88%87%E5%88%86%EF%BC%88JAVA%EF%BC%89/" title="数组切分（JAVA）">
+                        <span class="hidden-mobile">数组切分（JAVA）</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

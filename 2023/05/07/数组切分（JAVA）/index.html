@@ -16,26 +16,26 @@
   <meta name="author" content="晏萩">
   <meta name="keywords" content="">
   
-    <meta name="description" content="题目：满足 N ! 的末尾恰好有 K 个 0 的最小的 N 是多少? 如果这样的 N 不存在输出 −1 。 输入格式一个整数 K 。 输出格式一个整数代表答案。 样例输入  2  样例输出  10  评测用例规模与约定对于 30% 的数据, 1≤K≤106. 对于 100% 的数据, 1≤K≤1018. 运行限制最大运行时间：3s最大运行内存: 512M 代码：123456789101112131">
+    <meta name="description" content="题目：已知一个长度为 N 的数组:A1,A2,A3,…AN 恰好是 1∼N 的一个排列。现 在要求你将 A 数组切分成若干个 (最少一个, 最多 N 个) 连续的子数组, 并且 每个子数组中包含的整数恰好可以组成一段连续的自然数。 例如对于 A&#x3D;1,3,2,4, 一共有 5 种切分方法: 1324 : 每个单独的数显然是 (长度为 1 的) 一段连续的自然数。 {1}{3,2}{4}:{">
 <meta property="og:type" content="article">
-<meta property="og:title" content="求阶乘（JAVA）">
-<meta property="og:url" content="http://example.com/2023/05/07/%E6%B1%82%E9%98%B6%E4%B9%98%EF%BC%88JAVA%EF%BC%89/index.html">
+<meta property="og:title" content="数组切分（JAVA）">
+<meta property="og:url" content="http://example.com/2023/05/07/%E6%95%B0%E7%BB%84%E5%88%87%E5%88%86%EF%BC%88JAVA%EF%BC%89/index.html">
 <meta property="og:site_name" content="晏萩の博客">
-<meta property="og:description" content="题目：满足 N ! 的末尾恰好有 K 个 0 的最小的 N 是多少? 如果这样的 N 不存在输出 −1 。 输入格式一个整数 K 。 输出格式一个整数代表答案。 样例输入  2  样例输出  10  评测用例规模与约定对于 30% 的数据, 1≤K≤106. 对于 100% 的数据, 1≤K≤1018. 运行限制最大运行时间：3s最大运行内存: 512M 代码：123456789101112131">
+<meta property="og:description" content="题目：已知一个长度为 N 的数组:A1,A2,A3,…AN 恰好是 1∼N 的一个排列。现 在要求你将 A 数组切分成若干个 (最少一个, 最多 N 个) 连续的子数组, 并且 每个子数组中包含的整数恰好可以组成一段连续的自然数。 例如对于 A&#x3D;1,3,2,4, 一共有 5 种切分方法: 1324 : 每个单独的数显然是 (长度为 1 的) 一段连续的自然数。 {1}{3,2}{4}:{">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/img/dm12.jpg">
-<meta property="article:published_time" content="2023-05-07T04:58:51.000Z">
-<meta property="article:modified_time" content="2023-05-07T05:00:52.479Z">
+<meta property="og:image" content="http://example.com/img/dm09.jpg">
+<meta property="article:published_time" content="2023-05-07T05:02:30.000Z">
+<meta property="article:modified_time" content="2023-05-07T05:04:59.076Z">
 <meta property="article:author" content="晏萩">
 <meta property="article:tag" content="JAVA">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="蓝桥杯">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/img/dm12.jpg">
+<meta name="twitter:image" content="http://example.com/img/dm09.jpg">
   
   
   
-  <title>求阶乘（JAVA） - 晏萩の博客</title>
+  <title>数组切分（JAVA） - 晏萩の博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -231,7 +231,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="求阶乘（JAVA）"></span>
+            <span id="subtitle" data-typed-text="数组切分（JAVA）"></span>
           
         </div>
 
@@ -242,7 +242,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-05-07 12:58" pubdate>
+        <time datetime="2023-05-07 13:02" pubdate>
           2023年5月7日 下午
         </time>
       </span>
@@ -254,7 +254,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.8k 字
+          1.6k 字
         
       </span>
     
@@ -265,7 +265,7 @@
         
         
         
-          15 分钟
+          14 分钟
         
       </span>
     
@@ -307,42 +307,41 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">求阶乘（JAVA）</h1>
+            <h1 style="display: none">数组切分（JAVA）</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p>满足 N ! 的末尾恰好有 K 个 0 的最小的 N 是多少?</p>
-<p>如果这样的 N 不存在输出 −1 。</p>
-<p><strong>输入格式</strong><br>一个整数 K 。</p>
-<p><strong>输出格式</strong><br>一个整数代表答案。</p>
+                <h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p>已知一个长度为 N 的数组:A1,A2,A3,…AN 恰好是 1∼N 的一个排列。现 在要求你将 A 数组切分成若干个 (最少一个, 最多 N 个) 连续的子数组, 并且 每个子数组中包含的整数恰好可以组成一段连续的自然数。</p>
+<p>例如对于 A&#x3D;1,3,2,4, 一共有 5 种切分方法:</p>
+<p>1324 : 每个单独的数显然是 (长度为 1 的) 一段连续的自然数。</p>
+<p>{1}{3,2}{4}:{3,2} 包含 2 到 3 , 是 一段连续的自然数, 另外 1 和 4 显然 也是。</p>
+<p>{1}{3,2,4}:{3,2,4} 包含 2 到 4 , 是一段连续的自然数, 另外1 显然也是。</p>
+<p>{1,3,2}{4}:{1,3,2} 包含 1 到 3 , 是 一段连续的自然数, 另外 4 显然也是。</p>
+<p>{1,3,2,4} : 只有一个子数组, 包含 1 到 4 , 是 一段连续的自然数。</p>
+<p><strong>输入格式</strong><br>第一行包含一个整数 N 。第二行包含 N 个整数, 代表 A 数组。</p>
+<p><strong>输出格式</strong><br>输出一个整数表示答案。由于答案可能很大, 所以输出其对 1000000007 取 模后的值</p>
 <p><strong>样例输入</strong></p>
 <blockquote>
-<p>2</p>
+<p>4<br>1 3 2 4</p>
 </blockquote>
 <p><strong>样例输出</strong></p>
 <blockquote>
-<p>10</p>
+<p>5</p>
 </blockquote>
-<p><strong>评测用例规模与约定</strong><br>对于 30% 的数据, 1≤K≤106.</p>
-<p>对于 100% 的数据, 1≤K≤1018.</p>
-<p><strong>运行限制</strong><br>最大运行时间：3s<br>最大运行内存: 512M</p>
-<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.Scanner;<br><span class="hljs-comment">// 1:无需package</span><br><span class="hljs-comment">// 2: 类名必须Main, 不可修改</span><br> <br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>   <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        Scanner sc=<span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br>        <span class="hljs-type">long</span> K=sc.nextLong();               <span class="hljs-comment">//输入K</span><br>        <span class="hljs-type">long</span> left=<span class="hljs-number">1</span>;                        <span class="hljs-comment">//左边界</span><br>        <span class="hljs-type">long</span> right=Long.MAX_VALUE-<span class="hljs-number">1</span>;         <span class="hljs-comment">//右边界</span><br>        <span class="hljs-keyword">while</span>(left&lt;right)&#123;                   <span class="hljs-comment">//二分法查找，因为要找最小值所以要令其不符合条件时自动退出循环，不能使用break语句停止。left（左边界）right（右边界）</span><br>            <span class="hljs-type">long</span> mid=(left+right)/<span class="hljs-number">2</span>;<br>            <span class="hljs-keyword">if</span> (f(mid)&lt;K)&#123;<br>                left=mid+<span class="hljs-number">1</span>;<br>            &#125;<br>            <span class="hljs-keyword">if</span> (f(mid)&gt;=K)&#123;<br>                right=mid;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">if</span> (f(right)==K)&#123;               <span class="hljs-comment">//符合条件输出值，不符合条件输出-1</span><br>            System.out.println(right);<br>        &#125;<span class="hljs-keyword">else</span> &#123;<br>            System.out.println(<span class="hljs-string">&quot;-1&quot;</span>);<br>        &#125;<br>        sc.close();<br> <br>    &#125;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">long</span> <span class="hljs-title function_">f</span><span class="hljs-params">(<span class="hljs-type">long</span> a)</span>&#123;    <span class="hljs-comment">//看有几个五来确定末尾有几个零</span><br>        <span class="hljs-type">long</span> sum=<span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">while</span>(a&gt;<span class="hljs-number">0</span>)&#123;<br>            sum+=a/<span class="hljs-number">5</span>;<br>            a=a/<span class="hljs-number">5</span>;<br>        &#125;<br>        <span class="hljs-keyword">return</span> sum;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><strong>评测用例规模与约定</strong><br>对于 30% 评测用例,1≤N≤20.</p>
+<p>对于100% 评测用例,1≤N≤10000.</p>
+<p><strong>运行限制</strong><br>最大运行时间：5s<br>最大运行内存: 512M</p>
+<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.Scanner;<br><span class="hljs-comment">// 1:无需package</span><br><span class="hljs-comment">// 2: 类名必须Main, 不可修改</span><br> <br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        Scanner sc=<span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br>        <span class="hljs-type">int</span> n=sc.nextInt();                <span class="hljs-comment">//储存元素个数</span><br>        <span class="hljs-type">int</span> [] A=<span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[n+<span class="hljs-number">1</span>];            <br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;n+<span class="hljs-number">1</span>;i++)&#123;<br>            A[i]=sc.nextInt();<br>        &#125;<br>        <span class="hljs-type">int</span>[] dp=<span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[n+<span class="hljs-number">1</span>];     <span class="hljs-comment">//前n个元素之前有几种切分方法</span><br>        dp[<span class="hljs-number">0</span>]=<span class="hljs-number">1</span>;              <span class="hljs-comment">//初始化</span><br> <br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> r=<span class="hljs-number">1</span>;r&lt;n+<span class="hljs-number">1</span>;r++)&#123;      <br>            <span class="hljs-type">int</span> max=Integer.MIN_VALUE;<br>            <span class="hljs-type">int</span> min=Integer.MAX_VALUE;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> l=r;l&gt;<span class="hljs-number">0</span>;l--)&#123;        <span class="hljs-comment">//从后往前遍历</span><br>                max=Math.max(A[l],max);<br>                min=Math.min(A[l],min);<br>                <span class="hljs-keyword">if</span> (max-min==r-l)&#123;<br>                    dp[r]=(dp[r]+dp[l-<span class="hljs-number">1</span>])%<span class="hljs-number">1000000007</span>;  <span class="hljs-comment">//状态转移</span><br>                &#125;<br> <br>            &#125;<br>        &#125;<br>        System.out.println(dp[n]);<br>        sc.close();<br> <br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><p>看到题目我觉得这道题应该是找规律的（K的取值那么大总不可能是暴力输出吧（doge）），然后发现5的时候末尾有一个0，10的时候末尾有两个0，15的时候末尾有三个0。</p>
-<p>那么这题的规律就来了。</p>
-<p>一个数的阶乘末尾如果想有0，那么就要乘10，而2<em>5&#x3D;10（剩下的7个数相乘凑不出来10），所以我们就需要找有几个2</em>5，因为2比5小所以在一个数的阶乘中，包含2的个数一定比5的个数多，所以转换成我们需要求5的个数。下面举几个例子帮助大家理解</p>
-<p>5！&#x3D;1<em>2</em>3<em>4</em>5   其中有5&#x2F;5&#x3D;1个5。</p>
-<p>10！&#x3D;1<em>2</em>3*……<em>9</em>10     其中有10&#x2F;5&#x3D;2个5。</p>
-<p>13！&#x3D;1<em>2</em>3*…..<em>12</em>13     其中有13&#x2F;5&#x3D;2个5。</p>
-<p>25！&#x3D;1<em>2</em>3*….<em>24</em>25   其中有25&#x2F;5&#x3D;5个5（等等好像不对）25！中应该有6个5吧我们来数一下，5&#x3D;1<em>5，10&#x3D;2</em>5，15&#x3D;3<em>5，20&#x3D;4</em>5，25&#x3D;5*5。25可以分解为两个5，相应的125可以分解成3个5相乘，所以我们要用循环将其除尽才能得出正确的5的个数。</p>
-<p>好规律找到了（阶乘末尾有几个0取决于该数可以分解出几个5），我们就需要进行查找了，这里我们选择使用二分法（因为快）。</p>
-<p>使用二分法就需要找左右边界，左边界很好找就是1，右边界呢？</p>
-<p>因为</p>
-<p>Long.MAX_VALUE的阶乘后边有   2305843009213693937个0(10的19次方) &gt; k<br>Long.MAX_VALUE&#x2F;2的阶乘后边有 1152921504606846964个0(10的19次方) &gt; k<br>（其它博主的文章里复制的）<br>这里给上原文链接：<a target="_blank" rel="noopener" href="http://t.csdn.cn/rDIsy">http://t.csdn.cn/rDIsy</a></p>
-<p>所以右边界我们就用Long.MAX_VALUE为了防止在二分时相加越界，所以右边界用Long.MAX_VALUE-1（减几都可以（也不能减太多（doge）））。</p>
-<p>至此我们通过找规律和二分查找成功解决问题。</p>
-<p>注：其实一开始我也只是意识到有规律并没有准确找到，这道题是看过题解后才写出来的，还是差太多了，一起加油吧各位。</p>
+<h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><p>本题采用了动态规划的思路。</p>
+<p>首先从题目中得知划分出来的数组是连续的，所以一段数组中的max-min就应该等于数组中最右端的下标减去最左端的下表。</p>
+<p>max-min&#x3D;r-l</p>
+<p>接着我们从数组的第一个元素开始找前i个元素，有几种划分方式。依次向后dp。得到状态转移方程</p>
+<p> dp[r]&#x3D;dp[r]+dp[l-1]</p>
+<p> dp要有两个循环，第一层循环相当于确定了最右边的元素，然后依次向左遍历，找到可以组成连续子序列时再加上最左边元素之前所有元素的划分方式。依次向前直到第一个元素。</p>
+<p>第二层循环必须从后往前遍历，因为我们要找最大最小值（从后往前一个数一个数找，可以保证找到的最值一定正确），如果从前往后遍历（拿第一次也就是遍历第一个元素时）最大最小值都是第一个元素，但此时的子序列是从第一个元素到r中间元素都没有进行比较，就会出现错误。</p>
+<p>dp[0]&#x3D;1,我是这么理解的：当后面前n个元素可以组成一个连续子序列时，前面有0个元素只有自身一种情况。比如例题中 1 3 2 4  前3中所有元素可以组成一个连续子序列，没有剩余元素了所以只有自身这一种情况。   也就是说没有元素也是合法情况。</p>
 
                 
               </div>
@@ -392,8 +391,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>求阶乘（JAVA）</div>
-      <div>http://example.com/2023/05/07/求阶乘（JAVA）/</div>
+      <div>数组切分（JAVA）</div>
+      <div>http://example.com/2023/05/07/数组切分（JAVA）/</div>
     </div>
     <div class="license-meta">
       
@@ -437,9 +436,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/05/07/%E6%95%B0%E7%BB%84%E5%88%87%E5%88%86%EF%BC%88JAVA%EF%BC%89/" title="数组切分（JAVA）">
+                      <a href="/2023/05/07/GCD%EF%BC%88JAVA%EF%BC%89/" title="GCD（JAVA）">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">数组切分（JAVA）</span>
+                        <span class="hidden-mobile">GCD（JAVA）</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -447,8 +446,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/05/07/%E6%9C%80%E5%B0%91%E5%88%B7%E9%A2%98%E6%95%B0%EF%BC%88JAVA%EF%BC%89/" title="最少刷题数（JAVA）">
-                        <span class="hidden-mobile">最少刷题数（JAVA）</span>
+                      <a href="/2023/05/07/%E6%B1%82%E9%98%B6%E4%B9%98%EF%BC%88JAVA%EF%BC%89/" title="求阶乘（JAVA）">
+                        <span class="hidden-mobile">求阶乘（JAVA）</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
