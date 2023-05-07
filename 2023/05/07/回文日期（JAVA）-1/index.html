@@ -16,26 +16,26 @@
   <meta name="author" content="晏萩">
   <meta name="keywords" content="">
   
-    <meta name="description" content="题目：给定一个长度为 N 的数列 A1,A2,⋯,AN 。现在小蓝想通过若干次操作将 这个数列中每个数字清零。 每次操作小蓝可以选择以下两种之一: 选择一个大于 0 的整数, 将它减去 1 ;选择连续 K 个大于 0 的整数, 将它们各减去 1 。小蓝最少经过几次操作可以将整个数列清零? 输入格式输入第一行包含两个整数 N 和 K 。 第二行包含 N 个整数 A1,A2,⋯,AN 。 输出格式输出">
+    <meta name="description" content="题目：2020 年春节期间，有一个特殊的日期引起了大家的注意：2020 年 2 月 2 日。因为如果将这个日期按 “yyyymmdd” 的格式写成一个 8 位数是 20200202，恰好是一个回文数。我们称这样的日期是回文日期。 有人表示 20200202 是 “千年一遇” 的特殊日子。对此小明很不认同，因为不到 2 年之后就是下一个回文日期：20211202 即 2021 年 12 月 2 日。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="最优清零方案（JAVA）">
-<meta property="og:url" content="http://example.com/2023/05/07/%E6%9C%80%E4%BC%98%E6%B8%85%E9%9B%B6%E6%96%B9%E6%A1%88%EF%BC%88JAVA%EF%BC%89/index.html">
+<meta property="og:title" content="回文日期（JAVA）">
+<meta property="og:url" content="http://example.com/2023/05/07/%E5%9B%9E%E6%96%87%E6%97%A5%E6%9C%9F%EF%BC%88JAVA%EF%BC%89-1/index.html">
 <meta property="og:site_name" content="晏萩の博客">
-<meta property="og:description" content="题目：给定一个长度为 N 的数列 A1,A2,⋯,AN 。现在小蓝想通过若干次操作将 这个数列中每个数字清零。 每次操作小蓝可以选择以下两种之一: 选择一个大于 0 的整数, 将它减去 1 ;选择连续 K 个大于 0 的整数, 将它们各减去 1 。小蓝最少经过几次操作可以将整个数列清零? 输入格式输入第一行包含两个整数 N 和 K 。 第二行包含 N 个整数 A1,A2,⋯,AN 。 输出格式输出">
+<meta property="og:description" content="题目：2020 年春节期间，有一个特殊的日期引起了大家的注意：2020 年 2 月 2 日。因为如果将这个日期按 “yyyymmdd” 的格式写成一个 8 位数是 20200202，恰好是一个回文数。我们称这样的日期是回文日期。 有人表示 20200202 是 “千年一遇” 的特殊日子。对此小明很不认同，因为不到 2 年之后就是下一个回文日期：20211202 即 2021 年 12 月 2 日。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/img/dm06.jpg">
-<meta property="article:published_time" content="2023-05-07T05:14:44.000Z">
-<meta property="article:modified_time" content="2023-05-07T05:16:58.092Z">
+<meta property="og:image" content="http://example.com/img/dm10.jpg">
+<meta property="article:published_time" content="2023-05-07T05:22:22.000Z">
+<meta property="article:modified_time" content="2023-05-07T05:25:00.483Z">
 <meta property="article:author" content="晏萩">
 <meta property="article:tag" content="JAVA">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="蓝桥杯">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/img/dm06.jpg">
+<meta name="twitter:image" content="http://example.com/img/dm10.jpg">
   
   
   
-  <title>最优清零方案（JAVA） - 晏萩の博客</title>
+  <title>回文日期（JAVA） - 晏萩の博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -231,7 +231,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="最优清零方案（JAVA）"></span>
+            <span id="subtitle" data-typed-text="回文日期（JAVA）"></span>
           
         </div>
 
@@ -242,7 +242,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-05-07 13:14" pubdate>
+        <time datetime="2023-05-07 13:22" pubdate>
           2023年5月7日 下午
         </time>
       </span>
@@ -254,7 +254,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.6k 字
+          2.1k 字
         
       </span>
     
@@ -265,7 +265,7 @@
         
         
         
-          14 分钟
+          18 分钟
         
       </span>
     
@@ -307,54 +307,33 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">最优清零方案（JAVA）</h1>
+            <h1 style="display: none">回文日期（JAVA）</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p>给定一个长度为 N 的数列 A1,A2,⋯,AN 。现在小蓝想通过若干次操作将 这个数列中每个数字清零。</p>
-<p>每次操作小蓝可以选择以下两种之一:</p>
-<p>选择一个大于 0 的整数, 将它减去 1 ;<br>选择连续 K 个大于 0 的整数, 将它们各减去 1 。<br>小蓝最少经过几次操作可以将整个数列清零?</p>
-<p><strong>输入格式</strong><br>输入第一行包含两个整数 N 和 K 。</p>
-<p>第二行包含 N 个整数 A1,A2,⋯,AN 。</p>
-<p><strong>输出格式</strong><br>输出一个整数表示答案。</p>
-<p><strong>样例输入</strong></p>
+                <h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p>2020 年春节期间，有一个特殊的日期引起了大家的注意：2020 年 2 月 2 日。因为如果将这个日期按 “yyyymmdd” 的格式写成一个 8 位数是 20200202，恰好是一个回文数。我们称这样的日期是回文日期。</p>
+<p>有人表示 20200202 是 “千年一遇” 的特殊日子。对此小明很不认同，因为不到 2 年之后就是下一个回文日期：20211202 即 2021 年 12 月 2 日。</p>
+<p>也有人表示 20200202 并不仅仅是一个回文日期，还是一个 ABABBABA 型的回文日期。对此小明也不认同，因为大约 100 年后就能遇到下一个 ABABBABA 型的回文日期：21211212 即 2121 年 12 月 12 日。算不上 “千年一遇”，顶多算 “千年两遇”。</p>
+<p>给定一个 8 位数的日期，请你计算该日期之后下一个回文日期和下一个 ABABBABA 型的回文日期各是哪一天。</p>
+<p><strong>输入描述</strong><br>输入包含一个八位整数 N，表示日期。</p>
+<p>对于所有评测用例，10000101≤N≤89991231，保证 N 是一个合法日期的 8 位数表示。</p>
+<p><strong>输出描述</strong><br>输出两行，每行 1 个八位数。第一行表示下一个回文日期，第二行表示下一个 ABABBABA 型的回文日期。</p>
+<p><strong>输入输出样例</strong><br>示例</p>
+<p><strong>输入</strong></p>
 <blockquote>
-<p>4 2<br>1 2 3 4</p>
+<p>20200202</p>
 </blockquote>
-<p><strong>样例输出</strong></p>
+<p><strong>输出</strong></p>
 <blockquote>
-<p>6</p>
+<p>20211202<br>21211212</p>
 </blockquote>
-<p><strong>评测用例规模与约定</strong><br>对于 20 %20% 的评测用例,1≤K≤N≤10 。</p>
-<p>对于 40 %40% 的评测用例, 1≤K≤N≤100 。</p>
-<p>对于 50 %50% 的评测用例, 1≤K≤N≤1000 。</p>
-<p>对于 60 %60% 的评测用例, 1≤K≤N≤10000 。</p>
-<p>对于 70 %70% 的评测用例, 1≤K≤N≤100000 。</p>
-<p>对于所有评测用例, 1≤K≤N≤1000000,0≤Ai≤1000000 。</p>
-<p><strong>运行限制</strong><br>最大运行时间：15s<br>最大运行内存: 512M</p>
-<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.Scanner;<br> <br><span class="hljs-keyword">import</span> java.util.Arrays;<br><span class="hljs-comment">// 1:无需package</span><br><span class="hljs-comment">// 2: 类名必须Main, 不可修改</span><br> <br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>    <span class="hljs-keyword">static</span> <span class="hljs-type">long</span> <span class="hljs-variable">count</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">Scanner</span> <span class="hljs-variable">scanner</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br>        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> scanner.nextInt();<br>        <span class="hljs-type">int</span> <span class="hljs-variable">k</span> <span class="hljs-operator">=</span> scanner.nextInt();<br> <br>        <span class="hljs-type">long</span> [] A = <span class="hljs-keyword">new</span> <span class="hljs-title class_">long</span>[n];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span><span class="hljs-number">0</span> ; i &lt; n;i++)&#123;<br>            A[i] = scanner.nextLong();<br>        &#125;<br>        f(A,k);<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++)&#123;<br>            count+=A[i];<br>        &#125;                           <span class="hljs-comment">//循环后都是不连续的数字只能一个个减</span><br>        System.out.println(count);<br>    &#125;<br> <br>    <span class="hljs-keyword">public</span>  <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">f</span><span class="hljs-params">(<span class="hljs-type">long</span>[] A,  <span class="hljs-type">int</span> k)</span>&#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">m</span> <span class="hljs-operator">=</span><span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">while</span> (m &lt;= A.length-k)&#123;                  <span class="hljs-comment">//从第一个数字开始将k个连续数字减去其中最小值，依次向后进行。</span><br>            <span class="hljs-type">long</span> <span class="hljs-variable">min</span> <span class="hljs-operator">=</span>Integer.MAX_VALUE;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">index</span> <span class="hljs-operator">=</span> -<span class="hljs-number">1</span>;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span>m ;i&lt;m+k ;i++ )&#123;<br>                <span class="hljs-keyword">if</span> (A[i]&lt;=min)&#123;<br>                    min =A[i];<br>                    index = i;<br>                &#125;<br>            &#125;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span>m ;i&lt;m+k ;i++ )&#123;<br>                A[i] -= min;<br>            &#125;<br>            count+=min;          <span class="hljs-comment">//最小数字则为对连续k个数字的操作次数。</span><br>            m =index+<span class="hljs-number">1</span>;         <span class="hljs-comment">//向后移动，移动到0的下一位</span><br> <br>        &#125;<br> <br> <br> <br> <br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><strong>运行限制</strong><br>最大运行时间：1s<br>最大运行内存: 256M</p>
+<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.Scanner;<br><span class="hljs-comment">// 1:无需package</span><br><span class="hljs-comment">// 2: 类名必须Main, 不可修改</span><br> <br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br> <span class="hljs-keyword">static</span> <span class="hljs-type">int</span> [] yue=&#123;<span class="hljs-number">0</span>,<span class="hljs-number">31</span>,<span class="hljs-number">29</span>,<span class="hljs-number">31</span>,<span class="hljs-number">30</span>,<span class="hljs-number">31</span>,<span class="hljs-number">30</span>,<span class="hljs-number">31</span>,<span class="hljs-number">31</span>,<span class="hljs-number">30</span>,<span class="hljs-number">31</span>,<span class="hljs-number">30</span>,<span class="hljs-number">31</span>&#125;;  <span class="hljs-comment">//存储每个月的天数闰年的话日期是92200229符合条件所以二月按照闰年算</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        Scanner sc=<span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br>        <span class="hljs-type">int</span> N,qishi;                        <br>        N=sc.nextInt();             <span class="hljs-comment">//输入八位数字表示的日期</span><br>        <span class="hljs-type">int</span> c=<span class="hljs-number">1</span>;                    <span class="hljs-comment">//在输出时做判断用，使其只会输出一个普通类型的回文日期。</span><br>        <span class="hljs-type">int</span> a=N/<span class="hljs-number">10000</span>;              <span class="hljs-comment">//取输入日期的年份</span><br>        <span class="hljs-type">int</span> d=a*<span class="hljs-number">10000</span>+a%<span class="hljs-number">10</span>*<span class="hljs-number">1000</span>+a/<span class="hljs-number">10</span>%<span class="hljs-number">10</span>*<span class="hljs-number">100</span>+a/<span class="hljs-number">100</span>%<span class="hljs-number">10</span>*<span class="hljs-number">10</span>+a/<span class="hljs-number">1000</span>;  <span class="hljs-comment">//算出该年份对应的回文日期排除特殊情况（思路里会说）</span><br>        <span class="hljs-keyword">if</span> (N&lt;d)&#123;         <br>            qishi=a;<br>        &#125;<span class="hljs-keyword">else</span> &#123;<br>            qishi=a+<span class="hljs-number">1</span>;<br>        &#125;                 <span class="hljs-comment">//判断是否为特殊情况确定起始年份</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i=qishi;i&lt;=<span class="hljs-number">9999</span>;i++)&#123;<br>          String x=Integer.toString(i);      <span class="hljs-comment">//将年份转化为字符串</span><br>          StringBuilder stringBuilder=<span class="hljs-keyword">new</span> <span class="hljs-title class_">StringBuilder</span>(x);<br>          String y=stringBuilder.reverse().toString();     <span class="hljs-comment">//将年份的字符串反转并存储，如2021反转为1202</span><br>          <span class="hljs-type">int</span> b=i%<span class="hljs-number">10</span>*<span class="hljs-number">1000</span>+i/<span class="hljs-number">10</span>%<span class="hljs-number">10</span>*<span class="hljs-number">100</span>+i/<span class="hljs-number">100</span>%<span class="hljs-number">10</span>*<span class="hljs-number">10</span>+i/<span class="hljs-number">1000</span>;  <span class="hljs-comment">//利用年份算出日月存int类型做判断用</span><br>          <span class="hljs-keyword">if</span> (f(b)&amp;&amp;c==<span class="hljs-number">1</span>)&#123;      <span class="hljs-comment">//合法输出</span><br>              System.out.println(x+y);<br>              c--;<br>          &#125; <br>          <span class="hljs-keyword">if</span> (f(b)&amp;&amp;l(x))&#123;      <span class="hljs-comment">//合法且是特殊类型输出</span><br>              System.out.println(x+y); <br>              <span class="hljs-keyword">return</span>;<br>          &#125;<br> <br>        &#125;<br>        sc.close();<br>    &#125;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">f</span><span class="hljs-params">(<span class="hljs-type">int</span> b)</span>&#123;       <span class="hljs-comment">//判断求出的回文日期是否合法</span><br>        <span class="hljs-keyword">if</span> (b/<span class="hljs-number">100</span>&gt;<span class="hljs-number">12</span>||b%<span class="hljs-number">100</span>&gt;yue[b/<span class="hljs-number">100</span>])&#123;<br>              <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>    &#125;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">l</span><span class="hljs-params">(String x)</span>&#123;    <span class="hljs-comment">//判断是否为ABABBABA型回文日期</span><br>        <span class="hljs-keyword">if</span> (x.charAt(<span class="hljs-number">0</span>)==x.charAt(<span class="hljs-number">2</span>)&amp;&amp;x.charAt(<span class="hljs-number">1</span>)==x.charAt(<span class="hljs-number">3</span>))&#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><p>以题目中给的例子为例</p>
-<p>4 2</p>
-<p>1 2 3 4</p>
-<p>首先找到前k个连续的数字减去最小值。</p>
-<p>这里就是将1 2都减去1则这个数列变为了</p>
-<p>0 1 3 4</p>
-<p>在这里操作次数为1</p>
-<p>接着向0后一位移动在这里就移到了1的位置。</p>
-<p>重复上述步骤数列变为了</p>
-<p>0 0 2 4</p>
-<p>在这里操作次数为1</p>
-<p>接着移到2</p>
-<p>重复上述步骤数列变为</p>
-<p>0 0 0 2</p>
-<p>这里操作次数为2</p>
-<p>已经没有连续k个不为零的数字了退出循环</p>
-<p>还剩了一个单独的数字2将其减去</p>
-<p>这里操作次数为2</p>
-<p>总操作次数为1+1+2+2&#x3D;6</p>
-<p>注：本题一定不能将数列排序后再求解，我一开始的思路是将数列排序从后往前减将可以连续减k个数的规则最大限度的利用然后找出最小次数，结果就是过不去，经检查程序也没问题。最后通过看题解和再读题发现本题题意中其实是禁止排序的就是要在原数列上进行操作（一定要仔细读题）。</p>
+<h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><p>首先说明一下特殊情况，用例中会有20200101这种比年份对应的回文日期小，所以输出时答案应是两个20200202。如果直接从2021年开始算就会出错，所以我们要进行判断从2020年开始向后计算。</p>
+<p>代码是直接由年份算出回文日期，所以算出的日期一定是回文，所以不用再进行回文判断，只用判断日期是否合法即可。</p>
+<p><strong>注意：</strong>本题中说的是10000101≤N≤89991231，并不是日期最大只算到89991231（这个日期是用例中输入的最大的日期）本题进行计算时最大应该是99999999（最大八位数）。一开始写一直有个用例过不去（就是这个89991231）算是比较坑的一点（也是我没认真读题）。</p>
 
                 
               </div>
@@ -404,8 +383,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>最优清零方案（JAVA）</div>
-      <div>http://example.com/2023/05/07/最优清零方案（JAVA）/</div>
+      <div>回文日期（JAVA）</div>
+      <div>http://example.com/2023/05/07/回文日期（JAVA）-1/</div>
     </div>
     <div class="license-meta">
       
@@ -449,18 +428,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/05/07/%E4%B8%83%E6%AE%B5%E7%A0%81%EF%BC%88JAVA%EF%BC%89/" title="七段码（JAVA）">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">七段码（JAVA）</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/05/07/%E5%85%A8%E6%8E%92%E5%88%97%E7%9A%84%E4%BB%B7%E5%80%BC%EF%BC%88JAVA%EF%BC%89/" title="全排列的价值（JAVA）">
-                        <span class="hidden-mobile">全排列的价值（JAVA）</span>
+                      <a href="/2023/05/07/%E4%B8%83%E6%AE%B5%E7%A0%81%EF%BC%88JAVA%EF%BC%89/" title="七段码（JAVA）">
+                        <span class="hidden-mobile">七段码（JAVA）</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
