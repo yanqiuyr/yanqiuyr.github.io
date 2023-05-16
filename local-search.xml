@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>重合次数（JAVA）</title>
+    <link href="/2023/05/16/%E9%87%8D%E5%90%88%E6%AC%A1%E6%95%B0%EF%BC%88JAVA%EF%BC%89/"/>
+    <url>/2023/05/16/%E9%87%8D%E5%90%88%E6%AC%A1%E6%95%B0%EF%BC%88JAVA%EF%BC%89/</url>
+    
+    <content type="html"><![CDATA[<h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p>在同一天中, 从上午 6 点 13 分 22 秒到下午 14 点 36 分 20 秒, 钟表上的 分针和秒针一共重合了多少次?</p><p>注意时针、分针、秒针都围绕中心敳匀速运动。</p><p><strong>答案提交</strong></p><p>这是一道结果填空的题，你只需要算出结果后提交即可。本题的结果为一 个整数, 在提交答案时只填写这个整数, 填写多余的内容将无法得分。</p><p><strong>运行限制</strong></p><ul><li>最大运行时间：1s</li><li>最大运行内存: 512M</li></ul><h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">int</span> h=<span class="hljs-number">6</span>,m=<span class="hljs-number">13</span>,s=<span class="hljs-number">22</span>;<br>        <span class="hljs-type">int</span> sum=<span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">while</span>(<span class="hljs-literal">true</span>)&#123;<br>            <span class="hljs-keyword">if</span> (h==<span class="hljs-number">14</span>&amp;&amp;m==<span class="hljs-number">36</span>&amp;&amp;s==<span class="hljs-number">20</span>)&#123;<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>            <span class="hljs-keyword">if</span> (m==s)&#123;<br>                sum++;<br>            &#125;<br>            s++;<br>            <span class="hljs-keyword">if</span> (s==<span class="hljs-number">60</span>)&#123;<br>                s=<span class="hljs-number">0</span>;<br>                m++;<br>                <span class="hljs-keyword">if</span> (m==<span class="hljs-number">60</span>)&#123;<br>                    m=<span class="hljs-number">0</span>;<br>                    h++;<br>                &#125;<br>            &#125;<br><br><br>        &#125;<br>        sum=sum-<span class="hljs-number">8</span>;<br>        System.out.println(sum);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><p>用三个整形变量表示时间，在分针与秒针重合时次数加一，需要注意的是本题中？：59：59与？：00：00这两个时间算一次重合，所以我们在最后要减去8。</p><p>答案为494次</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日常练习</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>JAVA</tag>
+      
+      <tag>算法</tag>
+      
+      <tag>蓝桥杯</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>回文日期（JAVA）</title>
     <link href="/2023/05/07/%E5%9B%9E%E6%96%87%E6%97%A5%E6%9C%9F%EF%BC%88JAVA%EF%BC%89-1/"/>
     <url>/2023/05/07/%E5%9B%9E%E6%96%87%E6%97%A5%E6%9C%9F%EF%BC%88JAVA%EF%BC%89-1/</url>
