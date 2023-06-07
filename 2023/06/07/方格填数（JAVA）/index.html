@@ -16,26 +16,26 @@
   <meta name="author" content="晏萩">
   <meta name="keywords" content="">
   
-    <meta name="description" content="题目：本题为填空题，只需要算出结果后，在代码中使用输出语句将所填结果输出即可。 小蓝特别喜欢单调递增的事物。 在一个字符串中，如果取出若干个字符，将这些字符按照在字符串中的顺序排列后是单调递增的，则成为这个字符串中的一个单调递增子序列。 例如，在字符串 lanqiao 中，如果取出字符 n 和 q，则 nq 组成一个单调递增子序列。类似的单调递增子序列还有 lnq、i、ano 等等。 小蓝发现，有">
+    <meta name="description" content="题目：本题为填空题，只需要算出结果后，在代码中使用输出语句将所填结果输出即可。 如下的 10个格子     +–+–+–+   |  |  |  |+–+–+–+–+|  |  |  |  |+–+–+–+–+|  |  |  |+–+–+–+  填入 0 ~ 9 的数字。要求：连续的两个数字不能相邻。 （左右、上下、对角都算相邻） 一共有多少种可能的填数方案？ 运行限制  最大运行时间：1s 最">
 <meta property="og:type" content="article">
-<meta property="og:title" content="本质上升序列（JAVA）">
-<meta property="og:url" content="http://example.com/2023/05/28/%E6%9C%AC%E8%B4%A8%E4%B8%8A%E5%8D%87%E5%BA%8F%E5%88%97%EF%BC%88JAVA%EF%BC%89/index.html">
+<meta property="og:title" content="方格填数（JAVA）">
+<meta property="og:url" content="http://example.com/2023/06/07/%E6%96%B9%E6%A0%BC%E5%A1%AB%E6%95%B0%EF%BC%88JAVA%EF%BC%89/index.html">
 <meta property="og:site_name" content="晏萩の博客">
-<meta property="og:description" content="题目：本题为填空题，只需要算出结果后，在代码中使用输出语句将所填结果输出即可。 小蓝特别喜欢单调递增的事物。 在一个字符串中，如果取出若干个字符，将这些字符按照在字符串中的顺序排列后是单调递增的，则成为这个字符串中的一个单调递增子序列。 例如，在字符串 lanqiao 中，如果取出字符 n 和 q，则 nq 组成一个单调递增子序列。类似的单调递增子序列还有 lnq、i、ano 等等。 小蓝发现，有">
+<meta property="og:description" content="题目：本题为填空题，只需要算出结果后，在代码中使用输出语句将所填结果输出即可。 如下的 10个格子     +–+–+–+   |  |  |  |+–+–+–+–+|  |  |  |  |+–+–+–+–+|  |  |  |+–+–+–+  填入 0 ~ 9 的数字。要求：连续的两个数字不能相邻。 （左右、上下、对角都算相邻） 一共有多少种可能的填数方案？ 运行限制  最大运行时间：1s 最">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/img/dm08.jpg">
-<meta property="article:published_time" content="2023-05-28T09:30:51.000Z">
-<meta property="article:modified_time" content="2023-05-28T09:50:39.223Z">
+<meta property="og:image" content="http://example.com/img/dm15.jpg">
+<meta property="article:published_time" content="2023-06-07T09:30:15.000Z">
+<meta property="article:modified_time" content="2023-06-07T09:36:35.839Z">
 <meta property="article:author" content="晏萩">
 <meta property="article:tag" content="JAVA">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="蓝桥杯">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/img/dm08.jpg">
+<meta name="twitter:image" content="http://example.com/img/dm15.jpg">
   
   
   
-  <title>本质上升序列（JAVA） - 晏萩の博客</title>
+  <title>方格填数（JAVA） - 晏萩の博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -231,7 +231,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="本质上升序列（JAVA）"></span>
+            <span id="subtitle" data-typed-text="方格填数（JAVA）"></span>
           
         </div>
 
@@ -242,8 +242,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-05-28 17:30" pubdate>
-          2023年5月28日 下午
+        <time datetime="2023-06-07 17:30" pubdate>
+          2023年6月7日 下午
         </time>
       </span>
     
@@ -254,7 +254,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.1k 字
+          1.4k 字
         
       </span>
     
@@ -265,7 +265,7 @@
         
         
         
-          18 分钟
+          12 分钟
         
       </span>
     
@@ -307,43 +307,29 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">本质上升序列（JAVA）</h1>
+            <h1 style="display: none">方格填数（JAVA）</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p><strong>本题为填空题，只需要算出结果后，在代码中使用输出语句将所填结果输出即可。</strong></p>
-<p>小蓝特别喜欢单调递增的事物。</p>
-<p>在一个字符串中，如果取出若干个字符，将这些字符按照在字符串中的顺序排列后是单调递增的，则成为这个字符串中的一个单调递增子序列。</p>
-<p>例如，在字符串 lanqiao 中，如果取出字符 n 和 q，则 nq 组成一个单调递增子序列。类似的单调递增子序列还有 lnq、i、ano 等等。 小蓝发现，有些子序列虽然位置不同，但是字符序列是一样的，例如取第二个字符和最后一个字符可以取到 ao，取最后两个字符也可以取到 ao。小蓝认为他们并没有本质不同。</p>
-<p>对于一个字符串，小蓝想知道，本质不同的递增子序列有多少个？ 例如，对于字符串 lanqiao，本质不同的递增子序列有 21 个。它们分别是 l、a、n、q、i、o、ln、an、lq、aq、nq、ai、lo、ao、no、io、lnq、anq、lno、ano、aio。</p>
-<p>请问对于以下字符串（共 200200 个小写英文字母，分四行显示）：</p>
+                <h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p>本题为填空题，只需要算出结果后，在代码中使用输出语句将所填结果输出即可。</p>
+<p>如下的 10个格子</p>
 <blockquote>
-<p>tocyjkdzcieoiodfpbgcncsrjbhmugdnojjddhllnofawllbhf<br>iadgdcdjstemphmnjihecoapdjjrprrqnhgccevdarufmliqij<br>gihhfgdcmxvicfauachlifhafpdccfseflcdgjncadfclvfmad<br>vrnaaahahndsikzssoywakgnfjjaihtniptwoulxbaeqkqhfwl</p>
+<p>   +–+–+–+<br>   |  |  |  |<br>+–+–+–+–+<br>|  |  |  |  |<br>+–+–+–+–+<br>|  |  |  |<br>+–+–+–+</p>
 </blockquote>
-<p>本质不同的递增子序列有多少个？</p>
-<p><strong>运行限制</strong><br>最大运行时间：1s<br>最大运行内存: 128M</p>
-<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.Arrays;<br> <br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        String str=<span class="hljs-string">&quot;tocyjkdzcieoiodfpbgcncsrjbhmugdnojjddhllnofawllbhf&quot;</span>+<br>                   <span class="hljs-string">&quot;iadgdcdjstemphmnjihecoapdjjrprrqnhgccevdarufmliqij&quot;</span>+<br>                   <span class="hljs-string">&quot;gihhfgdcmxvicfauachlifhafpdccfseflcdgjncadfclvfmad&quot;</span>+<br>                   <span class="hljs-string">&quot;vrnaaahahndsikzssoywakgnfjjaihtniptwoulxbaeqkqhfwl&quot;</span>;<br>        <span class="hljs-type">int</span> dp[]=<span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[str.length()];<br>        Arrays.fill(dp,<span class="hljs-number">1</span>);<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;str.length();i++)&#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j=<span class="hljs-number">0</span>;j&lt;i;j++)&#123;<br>                <span class="hljs-keyword">if</span> (str.charAt(i)&gt;str.charAt(j))&#123;<br>                    dp[i]=dp[i]+dp[j];<br>                &#125;<br>                <span class="hljs-keyword">else</span>&#123;<br>                    <span class="hljs-keyword">if</span> (str.charAt(i)==str.charAt(j))&#123;<br>                        dp[i]=dp[i]-dp[j];<br>                    &#125;<br>                &#125;<br>            &#125;<br>       &#125;<br>        <span class="hljs-type">int</span> sum=<span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;str.length();i++)&#123;<br>            sum+=dp[i];<br>        &#125;<br>        System.out.println(sum);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>填入 0 ~ 9 的数字。要求：连续的两个数字不能相邻。 （左右、上下、对角都算相邻）</p>
+<p>一共有多少种可能的填数方案？</p>
+<p><strong>运行限制</strong></p>
+<ul>
+<li>最大运行时间：1s</li>
+<li>最大运行内存: 128M</li>
+</ul>
+<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>    <span class="hljs-keyword">static</span> <span class="hljs-type">int</span> sum=<span class="hljs-number">0</span>;   <span class="hljs-comment">//存储结果</span><br>    <span class="hljs-keyword">static</span> <span class="hljs-type">int</span>[][] nums=<span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[<span class="hljs-number">5</span>][<span class="hljs-number">6</span>];   <span class="hljs-comment">//用5行6列数组存储</span><br>    <span class="hljs-keyword">static</span> <span class="hljs-type">int</span>[] vis=<span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[<span class="hljs-number">10</span>];      <span class="hljs-comment">//记录0-9是否使用</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        fuzhi(); <br>        dfs(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>);   <span class="hljs-comment">//dfs入口</span><br>        System.out.println(sum);<br> <br>    &#125;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">fuzhi</span><span class="hljs-params">()</span>&#123;    <span class="hljs-comment">//将数组全赋值为-10避免影响对相邻是否连续的判断</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">5</span>;i++)&#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j=<span class="hljs-number">0</span>;j&lt;<span class="hljs-number">6</span>;j++)&#123;<br>                nums[i][j]=-<span class="hljs-number">10</span>;<br>            &#125;<br>        &#125;<br> <br>    &#125;<br> <br> <br> <br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">panduan</span><span class="hljs-params">(<span class="hljs-type">int</span> x,<span class="hljs-type">int</span> y)</span>&#123;   <span class="hljs-comment">//对所填数是否符合要求判断（相邻是否连续）</span><br>       <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=x-<span class="hljs-number">1</span>;i&lt;=x+<span class="hljs-number">1</span>;i++)&#123;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j=y-<span class="hljs-number">1</span>;j&lt;=y+<span class="hljs-number">1</span>;j++)&#123;<br>                <span class="hljs-keyword">if</span>(Math.abs(nums[i][j]-nums[x][y])==<span class="hljs-number">1</span>)<br>                    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>    &#125;<br> <br> <br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">dfs</span><span class="hljs-params">(<span class="hljs-type">int</span> x,<span class="hljs-type">int</span> y)</span>&#123;<br>        <span class="hljs-keyword">if</span> (x==<span class="hljs-number">3</span>&amp;&amp;y==<span class="hljs-number">4</span>)&#123;    <span class="hljs-comment">//dfs出口</span><br>            sum++;<br>            <span class="hljs-keyword">return</span>;<br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">10</span>;i++)&#123;   <span class="hljs-comment">//随机选一个数填入</span><br>            <span class="hljs-keyword">if</span> (vis[i]==<span class="hljs-number">0</span>) &#123;         <span class="hljs-comment">//没使用过则填入</span><br>                nums[x][y] = i;<br>                vis[i]=<span class="hljs-number">1</span>;<br> <br>                <span class="hljs-keyword">if</span> (!panduan(x, y)) &#123;    <span class="hljs-comment">//相邻连续则复原</span><br>                    nums[x][y] = -<span class="hljs-number">10</span>;<br>                    vis[i]=<span class="hljs-number">0</span>;<br>                    <span class="hljs-keyword">continue</span>;<br>                &#125;<br>                <span class="hljs-keyword">if</span> (y == <span class="hljs-number">4</span>) &#123;    <span class="hljs-comment">//到第四列换行</span><br>                    dfs(x + <span class="hljs-number">1</span>, <span class="hljs-number">1</span>);<br>                &#125; <span class="hljs-keyword">else</span>         <span class="hljs-comment">//不换行继续向右填入</span><br>                    dfs(x, y + <span class="hljs-number">1</span>);<br>                vis[i] = <span class="hljs-number">0</span>;       <span class="hljs-comment">//dfs回溯</span><br>                nums[x][y] = -<span class="hljs-number">10</span>;<br>            &#125;<br>        &#125;<br>    &#125;<br> <br>&#125;<br></code></pre></td></tr></table></figure>
 
-
-
-<h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><p>本题采用了动态规划思想</p>
-<p>dp[i]表示以第i个字母结尾的上升序列有多少个</p>
-<p>举个例子abcdca</p>
-<p>dp[1]&#x3D;1 a</p>
-<p>dp[2]&#x3D;2 b ab</p>
-<p>dp[3]&#x3D;4 c ac bc abc</p>
-<p>dp[4]&#x3D;8 d ad bd abd cd acd bcd abcd</p>
-<p>dp[5]&#x3D;0</p>
-<p>dp[6]&#x3D;0</p>
-<p>首先我们将dp全部初始化为1（因为每个字母本身就是一个上升序列）</p>
-<p>然后从头开始遍历， </p>
-<p>for (int i&#x3D;0;i&lt;str.length();i++)<br>再从前往后遍历到i</p>
-<p>for (int j&#x3D;0;j&lt;i;j++)<br>如果第i个字母大于第j个字母，那么就将第j个字母每一种排列后都可以加上第i个字母也就是</p>
-<p>if (str.charAt(i)&gt;str.charAt(j)){<br>    dp[i]&#x3D;dp[i]+dp[j];<br>}<br>如果第i个字母小于第j个字母那么就不是单调递增不用考虑</p>
-<p>如果第i个字母等于第j个字母我们以上面例子来讲，第二个c出现时之前一个c已经把前个字母的上升序列全组合过了，第二个c要是再与前三个字母组合就重复了。例如第一个字母与第三个字母组合为ac，第一个字母与第五个字母组合也为ac，就重复了，所以我们要将重复部分减去（这也就是我们为什么将初始值全设为1）</p>
-<p>if (str.charAt(i)&#x3D;&#x3D;str.charAt(j)){<br>    dp[i]&#x3D;dp[i]-dp[j];<br>}<br>然后我们将每个字母结尾的上升序列的组合数加起来就得到了总数，输出即可。</p>
-<p>注：上升序列要求单调递增，所以acc这一类的都不是上升序列。</p>
+<h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><p><strong>用DFS解题</strong></p>
+<p>首先我们要将题目中给的十个格子表示出来，这里我们用一个5行6列的数组（nums【5】【6】）取num【1】【2】到nums【3】【4】来表示。</p>
+<p>首先我们先将nums【5】【6】全部赋值为-10避免影响对相邻格子里面的数是否连续的判断。</p>
+<p>然后用vis数组存储每个数字是否使用过，接着我们就开始写dfs函数从十个数中选择任意一个数字进行判断填入，具体思路见代码中的注释。</p>
 
                 
               </div>
@@ -393,8 +379,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>本质上升序列（JAVA）</div>
-      <div>http://example.com/2023/05/28/本质上升序列（JAVA）/</div>
+      <div>方格填数（JAVA）</div>
+      <div>http://example.com/2023/06/07/方格填数（JAVA）/</div>
     </div>
     <div class="license-meta">
       
@@ -406,7 +392,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年5月28日</div>
+          <div>2023年6月7日</div>
         </div>
       
       
@@ -438,18 +424,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/06/07/%E6%96%B9%E6%A0%BC%E5%A1%AB%E6%95%B0%EF%BC%88JAVA%EF%BC%89/" title="方格填数（JAVA）">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">方格填数（JAVA）</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/05/26/%E8%93%9D%E8%82%BD%E5%AD%90%E5%BA%8F%E5%88%97%EF%BC%88JAVA%EF%BC%89/" title="蓝肽子序列（JAVA）">
-                        <span class="hidden-mobile">蓝肽子序列（JAVA）</span>
+                      <a href="/2023/05/28/%E6%9C%AC%E8%B4%A8%E4%B8%8A%E5%8D%87%E5%BA%8F%E5%88%97%EF%BC%88JAVA%EF%BC%89/" title="本质上升序列（JAVA）">
+                        <span class="hidden-mobile">本质上升序列（JAVA）</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
