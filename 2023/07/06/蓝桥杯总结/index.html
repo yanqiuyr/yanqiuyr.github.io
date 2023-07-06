@@ -16,26 +16,26 @@
   <meta name="author" content="晏萩">
   <meta name="keywords" content="">
   
-    <meta name="description" content="题目w 星球的一个种植园，被分成 m×n 个小格子（东西方向 m 行，南北方向 n 列）。每个格子里种了一株合根植物。 这种植物有个特点，它的根可能会沿着南北或东西方向伸展，从而与另一个格子的植物合成为一体。 如果我们告诉你哪些小格子间出现了连根现象，你能说出这个园中一共有多少株合根植物吗？ 输入描述第一行，两个整数 m,n，用空格分开，表示格子的行数、列数（1≤m,n≤1000）。 接下来一行，">
+    <meta name="description" content="历时一个学期第十四届蓝桥杯也算是落下帷幕了，我报的是java B组从什么都不懂到省一（自己都觉得不可思议），再到国优（优秀奖也就是安慰奖）。这一次参赛虽然国赛等于没拿奖，但对我而言已经很满意了，正经总结可能还要说点经验什么的，但我备赛确实没什么特别的地方可以说是毫无目的的乱学，刷题看到哪道写哪道，没有看过系统的算法视频，我感觉唯一有点可讲的也许就是临近国赛的前一周看了看DFS和并查集之类的暴力算法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="合根植物（JAVA）">
-<meta property="og:url" content="http://example.com/2023/06/09/%E5%90%88%E6%A0%B9%E6%A4%8D%E7%89%A9%EF%BC%88JAVA%EF%BC%89/index.html">
+<meta property="og:title" content="蓝桥杯总结">
+<meta property="og:url" content="http://example.com/2023/07/06/%E8%93%9D%E6%A1%A5%E6%9D%AF%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="晏萩の博客">
-<meta property="og:description" content="题目w 星球的一个种植园，被分成 m×n 个小格子（东西方向 m 行，南北方向 n 列）。每个格子里种了一株合根植物。 这种植物有个特点，它的根可能会沿着南北或东西方向伸展，从而与另一个格子的植物合成为一体。 如果我们告诉你哪些小格子间出现了连根现象，你能说出这个园中一共有多少株合根植物吗？ 输入描述第一行，两个整数 m,n，用空格分开，表示格子的行数、列数（1≤m,n≤1000）。 接下来一行，">
+<meta property="og:description" content="历时一个学期第十四届蓝桥杯也算是落下帷幕了，我报的是java B组从什么都不懂到省一（自己都觉得不可思议），再到国优（优秀奖也就是安慰奖）。这一次参赛虽然国赛等于没拿奖，但对我而言已经很满意了，正经总结可能还要说点经验什么的，但我备赛确实没什么特别的地方可以说是毫无目的的乱学，刷题看到哪道写哪道，没有看过系统的算法视频，我感觉唯一有点可讲的也许就是临近国赛的前一周看了看DFS和并查集之类的暴力算法">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/img/dm15.jpg">
-<meta property="article:published_time" content="2023-06-09T08:34:45.000Z">
-<meta property="article:modified_time" content="2023-06-09T08:42:52.149Z">
+<meta property="og:image" content="http://example.com/img/dm06.jpg">
+<meta property="article:published_time" content="2023-07-06T08:55:07.000Z">
+<meta property="article:modified_time" content="2023-07-06T08:57:12.169Z">
 <meta property="article:author" content="晏萩">
 <meta property="article:tag" content="JAVA">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="蓝桥杯">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/img/dm15.jpg">
+<meta name="twitter:image" content="http://example.com/img/dm06.jpg">
   
   
   
-  <title>合根植物（JAVA） - 晏萩の博客</title>
+  <title>蓝桥杯总结 - 晏萩の博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -231,7 +231,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="合根植物（JAVA）"></span>
+            <span id="subtitle" data-typed-text="蓝桥杯总结"></span>
           
         </div>
 
@@ -242,8 +242,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-06-09 16:34" pubdate>
-          2023年6月9日 下午
+        <time datetime="2023-07-06 16:55" pubdate>
+          2023年7月6日 下午
         </time>
       </span>
     
@@ -254,7 +254,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.6k 字
+          1.2k 字
         
       </span>
     
@@ -265,7 +265,7 @@
         
         
         
-          14 分钟
+          11 分钟
         
       </span>
     
@@ -307,39 +307,18 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">合根植物（JAVA）</h1>
+            <h1 style="display: none">蓝桥杯总结</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>w 星球的一个种植园，被分成 m×n 个小格子（东西方向 m 行，南北方向 n 列）。每个格子里种了一株合根植物。</p>
-<p>这种植物有个特点，它的根可能会沿着南北或东西方向伸展，从而与另一个格子的植物合成为一体。</p>
-<p>如果我们告诉你哪些小格子间出现了连根现象，你能说出这个园中一共有多少株合根植物吗？</p>
-<p><strong>输入描述</strong><br>第一行，两个整数 m,n，用空格分开，表示格子的行数、列数（1≤m,n≤1000）。</p>
-<p>接下来一行，一个整数 k (0≤k≤10^5 )，表示下面还有 k 行数据。</p>
-<p>接下来 k 行，每行两个整数a，b，表示编号为 a 的小格子和编号为 b 的小格子合根了。</p>
-<p>格子的编号一行一行，从上到下，从左到右编号。</p>
-<p>比如：5×4 的小格子，编号：</p>
-<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">1 </span><span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span><br><span class="hljs-symbol">5 </span><span class="hljs-number">6</span> <span class="hljs-number">7</span> <span class="hljs-number">8</span><br><span class="hljs-symbol">9 </span><span class="hljs-number">10</span> <span class="hljs-number">11</span> <span class="hljs-number">12</span><br><span class="hljs-symbol">13 </span><span class="hljs-number">14</span> <span class="hljs-number">15</span> <span class="hljs-number">16</span><br><span class="hljs-symbol">17 </span><span class="hljs-number">18</span> <span class="hljs-number">19</span> <span class="hljs-number">20</span><br></code></pre></td></tr></table></figure>
-
-<p><strong>输出描述</strong><br>输出植物数量。</p>
-<p><strong>输入输出样例</strong><br><strong>示例</strong></p>
-<p><strong>输入</strong></p>
-<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">5 </span><span class="hljs-number">4</span><br><span class="hljs-number">16</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">3</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">5</span><br><span class="hljs-symbol">5 </span><span class="hljs-number">9</span><br><span class="hljs-symbol">4 </span><span class="hljs-number">8</span><br><span class="hljs-symbol">7 </span><span class="hljs-number">8</span><br><span class="hljs-symbol">9 </span><span class="hljs-number">10</span><br><span class="hljs-symbol">10 </span><span class="hljs-number">11</span><br><span class="hljs-symbol">11 </span><span class="hljs-number">12</span><br><span class="hljs-symbol">10 </span><span class="hljs-number">14</span><br><span class="hljs-symbol">12 </span><span class="hljs-number">16</span><br><span class="hljs-symbol">14 </span><span class="hljs-number">18</span><br><span class="hljs-symbol">17 </span><span class="hljs-number">18</span><br><span class="hljs-symbol">15 </span><span class="hljs-number">19</span><br><span class="hljs-symbol">19 </span><span class="hljs-number">20</span><br><span class="hljs-symbol">9 </span><span class="hljs-number">13</span><br><span class="hljs-symbol">13 </span><span class="hljs-number">17</span><br></code></pre></td></tr></table></figure>
-
-<p><strong>输出</strong></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">5<br></code></pre></td></tr></table></figure>
-
-<p><strong>样例说明</strong></p>
-<p><img src="E:\ruanjian\boke\source\img\tupian09.png" srcset="/img/jiazai.webp" lazyload alt="tupian09"></p>
-<p><strong>运行限制</strong></p>
-<ul>
-<li>最大运行时间：2s</li>
-<li>最大运行内存: 256M</li>
-</ul>
-<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><code class="hljs java"> <br><span class="hljs-keyword">import</span> java.util.Scanner;<br> <br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>   <span class="hljs-keyword">static</span> <span class="hljs-type">int</span> n,m;       <span class="hljs-comment">//定义行列</span><br>   <span class="hljs-keyword">static</span> <span class="hljs-type">int</span> []pre=<span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[<span class="hljs-number">10000001</span>];    <span class="hljs-comment">//pre数组存储根（上级）</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        Scanner sc=<span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br>        n=sc.nextInt();<br>        m=sc.nextInt();<br>        <span class="hljs-type">int</span> k;<br>        k=sc.nextInt();<br>        <span class="hljs-type">int</span> [][] arr=<span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[k][<span class="hljs-number">2</span>];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;k;i++)&#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j=<span class="hljs-number">0</span>;j&lt;<span class="hljs-number">2</span>;j++) &#123;<br>                arr[i][j]=sc.nextInt();<br>            &#125;<br>        &#125;                                  <span class="hljs-comment">//输入</span><br>        <span class="hljs-type">int</span> x=n*m;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;x+<span class="hljs-number">1</span>;i++)&#123;<br>            pre[i]=i;                    <span class="hljs-comment">//初始化pre数组（所有植物的根都为本身）</span><br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;k;i++)&#123;<br>            join(arr[i][<span class="hljs-number">0</span>],arr[i][<span class="hljs-number">1</span>]);    <span class="hljs-comment">//合并根</span><br>        &#125;<br>        <span class="hljs-type">boolean</span> [] a=<span class="hljs-keyword">new</span> <span class="hljs-title class_">boolean</span>[x+<span class="hljs-number">1</span>];    <br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;x+<span class="hljs-number">1</span>;i++)&#123;<br>            a[i]=<span class="hljs-literal">false</span>;<br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;x+<span class="hljs-number">1</span>;i++)&#123;<br>            a[find(i)]=<span class="hljs-literal">true</span>;        <br>        &#125;<br>        <span class="hljs-type">int</span> sum=<span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;x+<span class="hljs-number">1</span>;i++)&#123;<br>            <span class="hljs-keyword">if</span> (a[i])&#123;<br>                sum++;            <span class="hljs-comment">//统计根的个数，进而得到有多少棵植物。</span><br>            &#125;<br>        &#125;<br>        System.out.println(sum);<br> <br> <br>    &#125;<br> <br> <br> <br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Integer <span class="hljs-title function_">find</span><span class="hljs-params">(<span class="hljs-type">int</span> x)</span>&#123;      <span class="hljs-comment">//查找植物的根</span><br>        <span class="hljs-keyword">if</span> (x==pre[x])&#123;<br>            <span class="hljs-keyword">return</span> x;<br>        &#125;<br>        <span class="hljs-keyword">return</span> pre[x]=find(pre[x]);<br>    &#125;<br> <br> <br> <br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">join</span><span class="hljs-params">(<span class="hljs-type">int</span> x,<span class="hljs-type">int</span> y)</span>&#123;    <span class="hljs-comment">//如果两个植物的根不相同，那么前一个植物的根变为后一个植物。</span><br>        x=find(x);<br>        y=find(y);<br>        <span class="hljs-keyword">if</span> (x!=y)&#123;<br>            pre[x]=y;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><p>运用并查集的思想，将所有的合根植物的根变为一个，最终根的数量就是植物的数量。 </p>
+                <p>历时一个学期第十四届蓝桥杯也算是落下帷幕了，我报的是java B组从什么都不懂到省一（自己都觉得不可思议），再到国优（优秀奖也就是安慰奖）。这一次参赛虽然国赛等于没拿奖，但对我而言已经很满意了，正经总结可能还要说点经验什么的，但我备赛确实没什么特别的地方可以说是毫无目的的乱学，刷题看到哪道写哪道，没有看过系统的算法视频，我感觉唯一有点可讲的也许就是临近国赛的前一周看了看DFS和并查集之类的暴力算法然后国赛真的用它写出了两道题。总之如果有同学想要参加蓝桥杯之类的比赛的话最好还是去系统的学习每一种算法比毫无目的的刷题强上许多。</p>
+<p>总结呢就到这吧下面就是一些闲话了</p>
+<p>在步入大学之前呢其实我完全不懂计算机，什么编程语言c，java听都没听说过。一直以来呢我就是班上最不起眼的同学成绩平平，没有特长，不爱发言。然后呢高考过后分数也就是一个普通本科院校，选专业时因为我生物很好也感兴趣所以想选生物类的专业但毕竟现实不允许，所以也就放弃了（这里吐槽一下高中生物满分90根本拉不开分差相反我英语奇差属于咋都学不会那种关键英语满分150英语好的能拉我六七十分，真的很难去弥补这些分差，但英语不管考什么都是大头又必须学好。）。然后呢选专业时就选择了比较热门的计算机专业（数据科学与大数据技术）。</p>
+<p>高考完那个暑假也没啥事就玩了一个假期，开学后就纯小白去接受所有的新事物听到一个又一个新名词，看一串串代码，我秉着干一行爱一行的态度同时也觉得敲代码挺帅的，也就慢慢接受了这一专业。然后呢就到了社团招新的日期，起初只是想试一试就加入了一个我们专业的学术性社团，在一个普通本科里虽然社团给你提供不了太大的帮助，但里面的学长学姐能够给你指路，能告诉你该怎么去学，这些东西对一个小白的帮助真的很大，于是呢我就开始自学去网上找视频学习JAVA，学到现在起码知道如何编写一个网页，比刚进大学时相比真的收获了很多。接着呢反正因为疫情又是封校又是去方舱隔离，也没怎么体验大学生活，就这样到了大二下学期。</p>
+<p>在老师的指导下报名了蓝桥杯，在报名蓝桥杯之前我对算法也是完全没有概念，也就省赛前一个月，开始刷题，啥也不懂就乱刷先是DP然后字符串就一类一类的来，写过的题每天向csdn上发一道，然后出乎意料的拿了省一，紧接着国赛备考因为期末事也多，加上我也松懈了不少所以国赛最多复习了半个月，最有用的就是考前看的几篇暴力的文章。</p>
+<p>结语：这次比赛也到此为止了，在学习的过程中真的收获了很多，但我也不准备再参加这类的比赛了，大学时光过的真的很快，转眼就大三了，前段时间看之前自学的课程因为太久没看忘了许多，所以准备重新拾起来继续学技术吧（到现在呢还是很迷茫我也不知道学这些到底有没有用，但技多不压身吗大学总要干点什么的），然后也该准备考研了（因为英语奇差考研难度不小😂）但总要试一试。然后呢这个“每日一题”的专题可能也要停了，如果其中的内容对大家有所帮助那真的是我的荣幸。</p>
+<p>感谢csdn上各位这段时间的陪伴，愿我们所得皆所愿，诸位一起加油！</p>
 
                 
               </div>
@@ -389,8 +368,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>合根植物（JAVA）</div>
-      <div>http://example.com/2023/06/09/合根植物（JAVA）/</div>
+      <div>蓝桥杯总结</div>
+      <div>http://example.com/2023/07/06/蓝桥杯总结/</div>
     </div>
     <div class="license-meta">
       
@@ -402,7 +381,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年6月9日</div>
+          <div>2023年7月6日</div>
         </div>
       
       
@@ -434,18 +413,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/07/06/%E8%93%9D%E6%A1%A5%E6%9D%AF%E6%80%BB%E7%BB%93/" title="蓝桥杯总结">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">蓝桥杯总结</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/06/07/%E6%96%B9%E6%A0%BC%E5%A1%AB%E6%95%B0%EF%BC%88JAVA%EF%BC%89/" title="方格填数（JAVA）">
-                        <span class="hidden-mobile">方格填数（JAVA）</span>
+                      <a href="/2023/06/09/%E5%90%88%E6%A0%B9%E6%A4%8D%E7%89%A9%EF%BC%88JAVA%EF%BC%89/" title="合根植物（JAVA）">
+                        <span class="hidden-mobile">合根植物（JAVA）</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
